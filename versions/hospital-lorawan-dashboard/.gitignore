@@ -1,0 +1,9 @@
+*.pyc
+__pycache__/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+.env
+PLAN.md
+AUDIT_REPORT.md

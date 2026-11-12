@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Hospitalario - Monitoreo LoRaWAN</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+</head>
+<body>
+    <!-- ==================== BARRA SUPERIOR ==================== -->
+    <header class="top-bar">
+        <div class="top-bar-left">
+            <i class="fas fa-hospital-alt logo-icon"></i>
+            <div class="logo-text">
+                <h1>Hospital LoRaWAN Monitor</h1>
+                <span class="subtitle">Sistema de Monitoreo de Temperatura y Humedad</span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="live-indicator" id="liveIndicator">
+                <span class="live-dot"></span>
+                <span class="live-text">EN VIVO</span>
+            </div>
+            <span class="update-time" id="updateTime">--:--:--</span>
+            <button class="btn-refresh" onclick="refreshData()" title="Actualizar ahora">
+                <i class="fas fa-sync-alt"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== CONTENEDOR PRINCIPAL ==================== -->
+    <main class="dashboard-container">
+
+        <!-- ===== CARDS DE RESUMEN ===== -->
+        <section class="summary-cards" id="summaryCards">
+            <div class="card card-total">
+                <div class="card-icon">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="card-info">
+                    <span class="card-value" id="totalDevices">0</span>
+                    <span class="card-label">Total Dispositivos</span>
+                </div>
+            </div>
+            <div class="card card-active">
+                <div class="card-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="card-info">
+                    <span class="card-value" id="activeDevices">0</span>
+                    <span class="card-label">Dispositivos OK</span>
+                </div>
+            </div>
+            <div class="card card-alert">
+                <div class="card-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="card-info">
+                    <span class="card-value" id="alertCount">0</span>
+                    <span class="card-label">Alertas Activas</span>
+                </div>
+            </div>
+            <div class="card card-readings">
+                <div class="card-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <div class="card-info">
+                    <span class="card-value" id="totalReadings">0</span>
+                    <span class="card-label">Total Lecturas</span>
+                </div>
+            </div>
+            <div class="card card-time">
+                <div class="card-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="card-info">
+                    <span class="card-value" id="readings24h">0</span>
+                    <span class="card-label">Lecturas 24h</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SECCIÓN DE FILTROS ===== -->
+        <section class="filters-section">
+            <div class="filter-group">
+                <label for="filterType"><i class="fas fa-filter"></i> Tipo:</label>
+                <select id="filterType" onchange="applyFilters()">
+                    <option value="">Todos los tipos</option>
+                    <option value="vitrina_refrigerada">Vitrina Refrigerada</option>
+                    <option value="frigobar">Frigobar</option>
+                    <option value="refri_combinado_frio">Refrigerador Combinado (Frío)</option>
+                    <option value="refri_combinado_cong">Refrigerador Combinado (Congelador)</option>
+                    <option value="freezer_20">Freezer -20°C</option>
+                    <option value="vitrina_2p">Vitrina 2 Puertas</option>
+                    <option value="freezer_80">Freezer -80°C</option>
+                    <option value="freezer_horizontal">Freezer Horizontal</option>
+                    <option value="camara_mortuoria">Cámara Mortuoria</option>
+                    <option value="ambiental">Monitoreo Ambiental</option>
+                    <option value="termostato_sonda">Termostato con Sonda</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="searchInput"><i class="fas fa-search"></i> Buscar:</label>
+                <input type="text" id="searchInput" placeholder="Dispositivo o ubicación..." oninput="applyFilters()">
+            </div>
+            <div class="filter-group filter-status">
+                <label><i class="fas fa-flag"></i> Estado:</label>
+                <button class="btn-status active" data-status="all" onclick="setStatusFilter('all', this)">Todos</button>
+                <button class="btn-status" data-status="ok" onclick="setStatusFilter('ok', this)">OK</button>
+                <button class="btn-status" data-status="alert" onclick="setStatusFilter('alert', this)">Alerta</button>
+            </div>
+        </section>
+
+        <!-- ===== GRÁFICO PRINCIPAL ===== -->
+        <section class="chart-section">
+            <div class="section-header">
+                <h2><i class="fas fa-chart-line"></i> Tendencia de Temperatura</h2>
+                <div class="chart-controls">
+                    <select id="chartDeviceSelect" onchange="updateChart()">
+                        <option value="">Seleccione un dispositivo...</option>
+                    </select>
+                </div>
+            </div>
+            <div class="chart-wrapper">
+                <canvas id="mainChart"></canvas>
+            </div>
+        </section>
+
+        <!-- ===== DISPOSITIVOS Y ALERTAS EN PARALELO ===== -->
+        <div class="content-grid">
+
+            <!-- TABLA DE DISPOSITIVOS -->
+            <section class="devices-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-list"></i> Dispositivos</h2>
+                    <span class="badge" id="devicesCount">0</span>
+                </div>
+                <div class="table-wrapper">
+                    <table class="devices-table" id="devicesTable">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Tipo</th>
+                                <th>Ubicación</th>
+                                <th>Temp. (°C)</th>
+                                <th>Humedad (%HR)</th>
+                                <th>Estado</th>
+                                <th>Últ. Lectura</th>
+                            </tr>
+                        </thead>
+                        <tbody id="devicesBody">
+                            <!-- Poblado por JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- PANEL DE ALERTAS -->
+            <section class="alerts-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-bell"></i> Alertas Recientes</h2>
+                    <span class="badge badge-alert" id="alertsCount">0</span>
+                </div>
+                <div class="alerts-container" id="alertsContainer">
+                    <!-- Poblado por JS -->
+                    <div class="alerts-empty">
+                        <i class="fas fa-check-circle"></i>
+                        <p>No hay alertas activas</p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- ===== LECTURAS RECIENTES ===== -->
+        <section class="recent-readings-section">
+            <div class="section-header">
+                <h2><i class="fas fa-history"></i> Últimas Lecturas</h2>
+                <button class="btn-refresh" onclick="refreshReadings()" title="Refrescar lecturas">
+                    <i class="fas fa-sync-alt"></i> Refrescar
+                </button>
+            </div>
+            <div class="table-wrapper">
+                <table class="readings-table" id="readingsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Dispositivo</th>
+                            <th>Tipo</th>
+                            <th>Temperatura (°C)</th>
+                            <th>Humedad (%HR)</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="readingsBody">
+                        <!-- Poblado por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer-left">
+            <i class="fas fa-shield-alt"></i>
+            <span>Hospital LoRaWAN Monitoring System v1.0</span>
+        </div>
+        <div class="footer-right">
+            <span id="footerTime"></span>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
