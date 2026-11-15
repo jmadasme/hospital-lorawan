@@ -134,6 +134,75 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   .stat{border-right:0;border-bottom:1px solid var(--line)}
   h1{font-size:42px}
 }
+
+/* ── Contenido heredado del proyecto original, en clave sobria ── */
+.rich{max-width:78ch}
+.rich p{margin:0 0 14px;color:#c3d4da}
+.rich h3{margin:26px 0 10px;font-size:19px;letter-spacing:-.02em}
+.rich h4{margin:22px 0 8px;font-size:15px;letter-spacing:-.01em}
+.rich ul,.rich ol{margin:0 0 16px;padding-left:22px;color:#c3d4da}
+.rich li{margin:0 0 6px}
+.rich figure{margin:22px 0;border:1px solid var(--line);border-radius:16px;padding:10px;background:rgba(11,34,43,.5)}
+.rich figure img{width:100%;display:block;border-radius:10px}
+.rich figcaption{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:9px;line-height:1.5}
+.rich .table-wrap{overflow-x:auto;margin:18px 0;border:1px solid var(--line);border-radius:12px}
+.rich table{border-collapse:collapse;width:100%;font-size:13.5px}
+.rich th,.rich td{padding:9px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.rich th{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:rgba(11,34,43,.6)}
+.rich tr:last-child td{border-bottom:0}
+.rich pre{margin:18px 0;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:#04141a;overflow-x:auto;font-family:var(--mono);font-size:12px;line-height:1.6;color:#cfe3e8}
+.rich code{font-family:var(--mono);font-size:.92em}
+.rich .note{margin:18px 0;padding:13px 16px;border-left:2px solid var(--accent);background:rgba(42,157,143,.07);color:#c3d4da;font-size:14px}
+.rich .card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:18px 0}
+.rich .card-grid .card{margin:0}
+
+
+.rich h3{margin:26px 0 8px}
+.rich p{margin:0 0 14px;color:var(--muted);line-height:1.7}
+.fail-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:6px}
+.fail{background:rgba(11,34,43,.55);border:1px solid var(--line);border-radius:14px;padding:18px}
+.fail .v{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--warm,#D6A86A)}
+.fail h3{font-size:16px;margin:8px 0 6px}
+.fail p{font-size:14px;margin:0;color:var(--muted)}
+.rating-head{display:flex;align-items:center;gap:20px;margin:6px 0 18px;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:rgba(11,34,43,.55)}
+.rating-avg{font-family:var(--mono);font-size:40px;line-height:1;color:var(--accent)}
+.rating-avg small{font-size:14px;color:var(--muted)}
+.rating-head p{margin:4px 0 0;font-size:14px;color:var(--muted);max-width:70ch}
+.rating{display:grid;gap:2px}
+.rating-row{display:grid;grid-template-columns:165px minmax(90px,1fr) 48px;gap:14px;align-items:center;padding:11px 0;border-bottom:1px solid var(--line)}
+.rating-row:last-child{border-bottom:0}
+.rating-name{font-size:13.5px;font-weight:600}
+.rating-bar{height:6px;border-radius:99px;background:rgba(148,190,200,.14);overflow:hidden}
+.rating-bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.rating-score{font-family:var(--mono);font-size:12.5px;color:var(--accent);text-align:right}
+.rating-note{grid-column:2/-1;font-size:12.5px;color:var(--muted);margin-top:-4px}
+.faq{display:grid;gap:0;margin-top:4px}
+.faq details{border-bottom:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:15px;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::before{content:"+";display:inline-block;width:18px;color:var(--accent);font-family:var(--mono)}
+.faq details[open] summary::before{content:"–"}
+.faq p{margin:10px 0 0 18px;font-size:14px;color:var(--muted)}
+@media(max-width:720px){
+  .fail-grid{grid-template-columns:1fr}
+  .rating-head{flex-direction:column;align-items:flex-start}
+  .rating-row{grid-template-columns:120px 1fr 44px}
+}
+
+
+.detail h2{margin:34px 0 10px;font-size:24px;letter-spacing:-.02em}
+.detail h3{margin:24px 0 8px;font-size:17px}
+.detail p{margin:0 0 14px;color:var(--muted);line-height:1.75}
+.detail ul,.detail ol{margin:0 0 16px 20px;color:var(--muted)}
+.detail li{margin:6px 0}
+.detail table{width:100%;border-collapse:collapse;margin:14px 0;font-size:13.5px}
+.detail th,.detail td{border-bottom:1px solid var(--line);padding:9px 10px;text-align:left;vertical-align:top}
+.detail th{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent)}
+.detail pre{background:rgba(6,20,27,.75);border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto;font-size:13px}
+.detail code{font-family:var(--mono);font-size:.92em}
+.detail img{max-width:100%;border-radius:12px;border:1px solid var(--line)}
+.detail blockquote{border-left:2px solid var(--accent);margin:14px 0;padding:2px 0 2px 16px;color:var(--muted)}
+
 </style>
 <link rel="stylesheet" href="assets/community.css?v=1">
 </head>
@@ -168,52 +237,1624 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   </div>
 </div></section>
 
-<section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">200</div><div class="stat-label">sensores</div></div><div class="stat"><div class="stat-num">Flask</div><div class="stat-label">backend</div></div><div class="stat"><div class="stat-num">SQLite</div><div class="stat-label">datos</div></div><div class="stat"><div class="stat-num">mock</div><div class="stat-label">modo demo</div></div></div></section>
-
-<section class="section" id="proyecto"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">01 — El proyecto</div><h2>Qué resuelve</h2><p class="section-sub">Dashboard para monitorear hasta 200 sensores LoRaWAN de temperatura y humedad. Incluye generador de datos mock, API y una interfaz pensada para operación.</p></div>
-  <div class="two">
-    <div class="card reveal"><span class="tag">Problema</span><h3>El punto de partida</h3><p>Un hospital necesita ver temperatura y humedad de muchas salas, pero probar el dashboard no debería requerir 200 sensores físicos.</p></div>
-    <div class="card reveal"><span class="tag">Solución</span><h3>La propuesta</h3><p>Un generador de datos mock y un modelo SQLite permiten desarrollar y demostrar el sistema sin hardware.</p></div>
-  </div>
-</div></section>
-
-<section class="section" id="versiones"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">02 — Versiones</div><h2>La historia, completa.</h2><p class="section-sub">Cada carpeta conserva una etapa del proyecto. No se borraron las anteriores: se pusieron en contexto.</p></div>
-  <div class="versions"><article class="version reveal">
-  <div class="version-top"><h3>hospital-lorawan-dashboard</h3><span class="count">1 archivo</span></div>
-  <p>Flask + SQLite + plantillas + generador de datos mock. README y docs originales.</p>
-  <a href="https://github.com/jmadasme/hospital-lorawan/tree/main/versions/hospital-lorawan-dashboard" target="_blank" rel="noopener">Ver carpeta <svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-</article></div>
-</div></section>
-
-<section class="section tight"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">03 — Cómo se usa</div><h2>De la carpeta a la práctica.</h2></div>
-  <div class="timeline"><div class="step reveal"><div class="step-n">01</div><h4>Instalá dependencias</h4><p>Creá un venv e instalá requirements.txt.</p></div><div class="step reveal"><div class="step-n">02</div><h4>Generá datos</h4><p>Cargá el generador mock para poblar SQLite.</p></div><div class="step reveal"><div class="step-n">03</div><h4>Abrí el dashboard</h4><p>Ejecutá Flask y entrá a la vista principal.</p></div><div class="step reveal"><div class="step-n">04</div><h4>Conectá LoRaWAN</h4><p>Reemplazá el mock por el ingest real cuando tengas gateways.</p></div></div>
-</div></section>
-
-<section class="section tight"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">04 — Decisiones</div><h2>Lo que lo hace distinto</h2></div>
-  <div class="features"><div class="feature reveal"><h4>Hasta 200 sensores</h4><p>El modelo y la vista están pensados para escala de sala.</p></div><div class="feature reveal"><h4>Datos mock</h4><p>Demo reproducible sin hardware.</p></div><div class="feature reveal"><h4>SQLite</h4><p>Cero infraestructura para empezar.</p></div><div class="feature reveal"><h4>API</h4><p>Endpoints para consultar lecturas.</p></div><div class="feature reveal"><h4>Plantillas</h4><p>Interfaz server-side simple de desplegar.</p></div><div class="feature reveal"><h4>Camino a producción</h4><p>El README separa demo de ingest real.</p></div></div>
-</div></section>
-
-<section class="section tight" id="stack"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">05 — Stack y arranque</div><h2>Con qué está construido</h2></div>
-  <div class="stack-grid">
-    <div class="reveal"><div class="chips"><span class="chip">Python</span><span class="chip">Flask</span><span class="chip">SQLite</span><span class="chip">Jinja</span><span class="chip">LoRaWAN</span></div><div class="note"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/></svg><span>Los datos que trae el repo son mock. No los interpretes como lecturas clínicas reales.</span></div></div>
-    <div class="terminal reveal"><div class="terminal-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div><pre>git clone https://github.com/jmadasme/hospital-lorawan.git
-cd hospital-lorawan/versions/hospital-lorawan-dashboard
-python3 -m venv venv &amp;&amp; source venv/bin/activate
+<section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">200</div><div class="stat-label">sensores</div></div><div class="stat"><div class="stat-num">Flask</div><div class="stat-label">backend</div></div><div class="stat"><div class="stat-num">SQLite</div><div class="stat-label">datos</div></div><div class="stat"><div class="stat-num">mock</div><div class="stat-label">modo demo</div></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El concepto</div><h2>Qué es y por qué existe</h2></div><div class="rich reveal"><p>Panel de monitoreo de cadena de frío hospitalaria construido con Flask y SQLite. Muestra temperatura y humedad de 200 puntos simulados, organizados en 11 tipos de dispositivo, con alertas por umbral, histórico y gráficos actualizados cada diez segundos. Está pensado para equipos de informática hospitalaria y desarrolladores que necesitan evaluar la interfaz, el modelo de datos y el flujo de alertas antes de conectar hardware real.</p><p>Su valor está en separar la aplicación de la adquisición: el README documenta el camino LoRaWAN completo —gateway, network server y MQTT o HTTP— como diseño, pero la versión 1.0.0 solo genera datos gaussianos. Es una demostración funcional y honesta de la capa de visualización, no un sistema clínico: las alertas no se resuelven, no hay autenticación ni retención de datos y la evaluación no incorpora histéresis.</p></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El proyecto en detalle</div><h2>Documentación preservada</h2><p class="section-sub">El README original, completo y en su contexto.</p></div><div class="detail rich reveal">
+<p><strong>Dashboard de monitoreo de temperatura y humedad para cadena de frío hospitalaria, con diseño de ingestión LoRaWAN y simulación de 200 sensores.</strong></p>
+<p><img alt="Versión" src="https://img.shields.io/badge/versi%C3%B3n-1.0.0-2A9D8F"/>
+<img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-457B9D"/>
+<img alt="Flask" src="https://img.shields.io/badge/Flask-3.0%2B-5B7C99"/>
+<img alt="SQLite" src="https://img.shields.io/badge/SQLite-3-06141b"/>
+<img alt="Datos" src="https://img.shields.io/badge/datos-MOCK%20por%20defecto-d9a441"/>
+<img alt="Licencia" src="https://img.shields.io/badge/licencia-MIT-2A9D8F"/></p>
+<blockquote>
+<p><strong>Estado de los datos — leer primero.</strong> La versión 1.0.0 de este repositorio
+<strong>no se conecta a ningún sensor físico</strong>. Todas las lecturas y alertas
+provienen de un <strong>generador sintético</strong> (<code>data_generator.py</code>) que corre dentro
+del proceso Flask. El camino LoRaWAN real (gateway → servidor de red →
+MQTT/HTTP → base de datos) está <strong>documentado como diseño, no implementado</strong>.
+Ningún número del dashboard sirve para decisiones clínicas, regulatorias ni
+de mantenimiento.</p>
+</blockquote>
+<hr/>
+<h2 id="tabla-de-contenidos">Tabla de contenidos</h2>
+<ol>
+<li><a href="#qué-es-este-proyecto">Qué es este proyecto</a></li>
+<li><a href="#datos-mock-vs-datos-reales">Datos mock vs. datos reales</a></li>
+<li><a href="#el-problema-cadena-de-frío">El problema: cadena de frío</a></li>
+<li><a href="#principio-físico-y-de-red">Principio físico y de red</a></li>
+<li><a href="#arquitectura">Arquitectura</a></li>
+<li><a href="#stack-y-requisitos">Stack y requisitos</a></li>
+<li><a href="#instalación">Instalación</a></li>
+<li><a href="#ejecución">Ejecución</a></li>
+<li><a href="#uso-del-dashboard">Uso del dashboard</a></li>
+<li><a href="#modelo-de-datos">Modelo de datos</a></li>
+<li><a href="#api-rest">API REST</a></li>
+<li><a href="#flujo-de-datos-simulado">Flujo de datos simulado</a></li>
+<li><a href="#flujo-lorawan-real-diseño">Flujo LoRaWAN real (diseño)</a></li>
+<li><a href="#simulación-y-escenarios">Simulación y escenarios</a></li>
+<li><a href="#despliegue">Despliegue</a></li>
+<li><a href="#seguridad">Seguridad</a></li>
+<li><a href="#límites-conocidos">Límites conocidos</a></li>
+<li><a href="#rendimiento-y-capacidad">Rendimiento y capacidad</a></li>
+<li><a href="#mantenimiento-y-respaldo">Mantenimiento y respaldo</a></li>
+<li><a href="#estructura-del-repositorio">Estructura del repositorio</a></li>
+<li><a href="#pruebas-y-verificación">Pruebas y verificación</a></li>
+<li><a href="#roadmap">Roadmap</a></li>
+<li><a href="#preguntas-frecuentes">Preguntas frecuentes</a></li>
+<li><a href="#licencia-y-atribuciones">Licencia y atribuciones</a></li>
+</ol>
+<hr/>
+<h2 id="que-es-este-proyecto">Qué es este proyecto</h2>
+<p><strong>Hospital LoRaWAN Monitor</strong> es una aplicación web monolítica que muestra en una
+pantalla el estado térmico y de humedad de hasta <strong>200 puntos de monitoreo</strong> de
+un hospital: vitrinas de farmacia, frigobares de enfermería, refrigeradores de
+cocina, freezers de −20 °C y −80 °C, cámaras mortuorias, áreas de confort
+ambiental y termostatos con sonda de salas técnicas.</p>
+<p>Está pensado como <strong>demostrador y banco de pruebas</strong> de una arquitectura de
+monitoreo IoT para cadena de frío:</p>
+<ul>
+<li><strong>Backend Flask</strong> que sirve una página HTML y una API REST JSON.</li>
+<li><strong>SQLite</strong> como almacén embebido, sin servidor de base de datos.</li>
+<li><strong>Generador mock</strong> en un hilo <em>daemon</em> que produce 200 lecturas cada 30 s y
+  evalúa límites para crear alertas.</li>
+<li><strong>Frontend sin build</strong>: HTML + CSS + JavaScript vanilla, Chart.js y Font
+  Awesome por CDN.</li>
+<li><strong>Diseño de integración LoRaWAN</strong> para TTN y ChirpStack, con esquema de
+  payload, mapeo <code>DevEUI → device_id</code>, idempotencia y <em>duty cycle</em>.</li>
+</ul>
+<p>Lo que <strong>no</strong> es: no controla compresores, no es producto sanitario certificado,
+no reemplaza registradores validados y no implementa autenticación, autorización
+ni auditoría firmada.</p>
+<table>
+<thead>
+<tr>
+<th>Capacidad</th>
+<th>Detalle</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inventario</td>
+<td>200 sensores en 11 tipos con límites propios</td>
+</tr>
+<tr>
+<td>Lecturas</td>
+<td>Temperatura siempre; humedad solo en <code>ambiental</code></td>
+</tr>
+<tr>
+<td>Alertas</td>
+<td>Evaluación por límites, severidad <code>warning</code> / <code>critical</code></td>
+</tr>
+<tr>
+<td>Visualización</td>
+<td>5 tarjetas, gráfico de 60 puntos, tabla de 200 filas, panel de 20 alertas, histórico de 100 lecturas</td>
+</tr>
+<tr>
+<td>Filtros</td>
+<td>Tipo, texto (nombre/ubicación) y estado (todos/OK/alerta)</td>
+</tr>
+<tr>
+<td>Actualización</td>
+<td>Polling cada 10 s; generación cada 30 s</td>
+</tr>
+<tr>
+<td>API</td>
+<td>10 rutas JSON con envoltura <code>{success, data, count}</code></td>
+</tr>
+<tr>
+<td>Persistencia</td>
+<td><code>hospital_lorawan.db</code> con WAL</td>
+</tr>
+<tr>
+<td>Operación</td>
+<td>Un proceso, sin dependencias nativas, arranque en un comando</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="datos-mock-vs-datos-reales">Datos mock vs. datos reales</h2>
+<table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Modo simulación (lo que corre)</th>
+<th>Modo producción (diseño)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Origen</td>
+<td><code>random.gauss()</code> en <code>data_generator.py</code></td>
+<td>Sensor físico → gateway → servidor de red</td>
+</tr>
+<tr>
+<td>Frecuencia</td>
+<td>Ronda de 200 filas cada 30 s</td>
+<td>5–15 min por nodo según <em>duty cycle</em></td>
+</tr>
+<tr>
+<td>Identidad</td>
+<td><code>devices.id</code> autoincremental</td>
+<td><code>DevEUI</code> + <code>device_id</code> interno</td>
+</tr>
+<tr>
+<td>Transporte</td>
+<td>Ninguno: INSERT directo en SQLite</td>
+<td>LoRaWAN RF + MQTT o webhook HTTPS</td>
+</tr>
+<tr>
+<td>Humedad</td>
+<td>Solo 30 dispositivos <code>ambiental</code></td>
+<td>Según sensor (SHT30/31, DHT22)</td>
+</tr>
+<tr>
+<td>Fuera de rango</td>
+<td>10 % de probabilidad por lectura</td>
+<td>Falla real o apertura de puerta</td>
+</tr>
+<tr>
+<td>Alertas</td>
+<td>Se crean y <strong>nunca se resuelven solas</strong></td>
+<td>Acuse y cierre por operador</td>
+</tr>
+<tr>
+<td>Volumen</td>
+<td>~576 000 lecturas/día</td>
+<td>~19 200/día con 200 nodos cada 15 min</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Regla práctica:</strong> si el dashboard se inicia con <code>python app.py</code>, los datos son
+mock. Si se conecta un <em>bridge</em> MQTT hay que <strong>detener el generador</strong>; de lo
+contrario las lecturas sintéticas contaminan el histórico y las métricas de
+disponibilidad.</p>
+<p>El generador se reconoce en los logs:</p>
+<pre><code>[INFO] Generador de datos iniciado. Intervalo: 30s
+[INFO] Generadas 200 lecturas para 200 dispositivos.
+</code></pre>
+<p>Para desactivarlo hay que dejar de llamar a <code>start_generator()</code> en
+<code>initialize()</code> (ver <a href="https://github.com/jmadasme/hospital-lorawan/blob/main/developer.md"><code>docs/developer.md</code></a>). Este repositorio
+<strong>no</strong> aplica ese cambio: conserva la versión 1.0.0 tal como fue publicada.</p>
+<hr/>
+<h2 id="el-problema-cadena-de-frio">El problema: cadena de frío</h2>
+<table>
+<thead>
+<tr>
+<th>Área</th>
+<th>Rango típico</th>
+<th>Qué se conserva</th>
+<th>Consecuencia de una excursión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Farmacia / vitrinas</td>
+<td>2 – 8 °C</td>
+<td>Vacunas, insulinas, biológicos</td>
+<td>Pérdida de potencia, dosis descartadas</td>
+</tr>
+<tr>
+<td>Banco de sangre</td>
+<td>2 – 8 °C</td>
+<td>Hemoderivados</td>
+<td>Producto no apto para transfusión</td>
+</tr>
+<tr>
+<td>Laboratorio</td>
+<td>2 – 8 °C</td>
+<td>Reactivos, calibradores</td>
+<td>Resultados inválidos</td>
+</tr>
+<tr>
+<td>Cocina</td>
+<td>2 – 8 °C y −20 °C</td>
+<td>Alimentos perecederos</td>
+<td>Riesgo bromatológico</td>
+</tr>
+<tr>
+<td>Biobanco</td>
+<td>−80 °C</td>
+<td>Tejidos, ADN, células madre</td>
+<td>Degradación irreversible</td>
+</tr>
+<tr>
+<td>Morgue</td>
+<td>2 – 8 °C</td>
+<td>Conservación de cuerpos</td>
+<td>Problema sanitario y legal</td>
+</tr>
+<tr>
+<td>Áreas de pacientes</td>
+<td>20 – 24 °C, 30 – 60 % HR</td>
+<td>Confort, control de infecciones</td>
+<td>Malestar, condensación, hongos</td>
+</tr>
+</tbody>
+</table>
+<p>Puntos críticos del problema operativo:</p>
+<ol>
+<li><strong>Escala</strong>: 200 puntos en varios pisos; la ronda manual consume horas.</li>
+<li><strong>Latencia</strong>: una puerta mal cerrada a las 03:00 se detecta a las 08:00.</li>
+<li><strong>Evidencia</strong>: la normativa exige registro continuo, no una planilla por turno.</li>
+<li><strong>Falsas alarmas</strong>: umbrales estrechos entrenan al personal a ignorar alarmas.</li>
+<li><strong>Costo</strong>: perder un lote de vacunas o un biobanco cuesta órdenes de
+   magnitud más que desplegar los sensores.</li>
+</ol>
+<p>La arquitectura que modela el proyecto: <strong>un nodo autónomo por punto de
+conservación</strong>, radio de bajo consumo hacia un gateway, servidor de red que
+desacopla radio y aplicación, y un dashboard con alertas priorizadas. La versión
+1.0.0 implementa solo la capa de aplicación y simula la de sensado.</p>
+<hr/>
+<h2 id="principio-fisico-y-de-red">Principio físico y de red</h2>
+<h3 id="medicion">Medición</h3>
+<ul>
+<li><strong>PT100/PT1000 y termopares</strong>: usados en sondas de equipos médicos y
+  freezers; alta precisión, requieren acondicionamiento analógico.</li>
+<li><strong>DS18B20</strong>: digital 1-Wire, −55 a +125 °C, ±0.5 °C típico; común en sondas
+  de penetración.</li>
+<li><strong>SHT30/SHT31</strong>: I²C, ±0.3 °C y ±2 % HR; ideal para monitoreo ambiental.</li>
+<li><strong>DHT22</strong>: bajo costo, ±0.5 °C, más lento y menos estable.</li>
+</ul>
+<p>La incertidumbre importa: con límite 8.0 °C y sensor de ±0.5 °C, una lectura de
+8.3 °C puede ser un equipo a 7.9 °C. Un sistema serio define <strong>umbral +
+histéresis + tiempo de persistencia</strong> ("alerta si supera 8.0 °C en 3 lecturas
+consecutivas"). La versión 1.0.0 evalúa <strong>una lectura individual</strong>, sin
+histéresis ni persistencia.</p>
+<h3 id="radio-lora">Radio LoRa</h3>
+<p>LoRa es la capa física: espectro ensanchado con <em>chirps</em> en bandas ISM sub-GHz
+(868 MHz Europa, 915 MHz América, 433 MHz Asia). El factor de ensanchamiento
+(SF7–SF12) intercambia velocidad por sensibilidad: SF12 llega más lejos y
+penetra mejor, pero permite pocos bytes por segundo y ocupa más tiempo de aire.
+Consecuencia: <strong>el enlace no es apto para streaming</strong>. Un nodo envía un puñado
+de bytes cada varios minutos; el dashboard recibe telemetría periódica, no
+"tiempo real" web.</p>
+<h3 id="lorawan">LoRaWAN</h3>
+<ul>
+<li><strong>End device</strong>: sensor + MCU + radio. Clase A por defecto (dos ventanas de
+  recepción tras cada uplink); clases B y C agregan escucha a costa de batería.</li>
+<li><strong>Gateway</strong>: concentrador multi-canal (SX1301/SX1302) que solo reenvía tramas
+  por IP; no decide nada.</li>
+<li><strong>Network Server</strong>: deduplica uplinks de varios gateways, valida MIC, gestiona
+  <em>frame counters</em>, ADR y <em>join</em>.</li>
+<li><strong>Join/Application Server</strong>: OTAA (recomendado) o ABP; descifra el payload y
+  lo entrega por MQTT, HTTP o gRPC.</li>
+<li><strong>Duty cycle</strong>: en 868 MHz la sub-banda por defecto limita a ~1 % de tiempo de
+  aire; en 915 MHz hay <em>dwell time</em> de 400 ms. Eso fija la frecuencia realista.</li>
+<li><strong>Payload</strong>: 51 bytes de aplicación como máximo habitual; con codificación
+  binaria (temperatura en centésimas, humedad en un byte) un reporte cabe en
+  3–5 bytes.</li>
+</ul>
+<p>Cadena completa:</p>
+<pre><code>[Sensor] → [MCU] → [Radio LoRa] ⇢⇢ RF ⇢⇢ [Gateway] → IP → [Network Server]
+        → [Application Server] → MQTT/HTTPS → [Bridge] → [SQLite] → [Dashboard]
+</code></pre>
+<p>Cada flecha es un dominio de fallo distinto. Un dashboard que solo mira la
+última fila <strong>no distingue</strong> "el equipo está bien" de "el nodo dejó de
+transmitir". Producción necesita un <strong>watchdog de silencio</strong> (alerta si un
+dispositivo lleva N minutos sin lecturas) y batería/RSSI. Nada de eso existe en
+1.0.0: el generador garantiza datos frescos para los 200 dispositivos.</p>
+<hr/>
+<h2 id="arquitectura">Arquitectura</h2>
+<p><img alt="Arquitectura del sistema" loading="lazy" src="rich/architecture.svg"/></p>
+<table>
+<thead>
+<tr>
+<th>Componente</th>
+<th>Archivo</th>
+<th>Responsabilidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Punto de entrada</td>
+<td><code>app.py</code></td>
+<td>Crea Flask, habilita CORS, carga <code>config.py</code>, inicializa BD, arranca generador, registra blueprint, sirve <code>/</code> y <code>/health</code></td>
+</tr>
+<tr>
+<td>Configuración</td>
+<td><code>config.py</code></td>
+<td>Rangos por tipo, cantidades, intervalos, probabilidad de falla, host/puerto</td>
+</tr>
+<tr>
+<td>Dominio</td>
+<td><code>models.py</code></td>
+<td>Dataclasses <code>Device</code>, <code>Reading</code>, <code>Alert</code> con <code>to_dict()</code></td>
+</tr>
+<tr>
+<td>Persistencia</td>
+<td><code>database.py</code></td>
+<td>Conexión SQLite (WAL + FK), DDL, índices, seed, helpers</td>
+</tr>
+<tr>
+<td>Simulación</td>
+<td><code>data_generator.py</code></td>
+<td>Hilo daemon, generación gaussiana, valores fuera de rango, inserción y alertas</td>
+</tr>
+<tr>
+<td>API</td>
+<td><code>routes.py</code></td>
+<td>Blueprint <code>api_bp</code> con rutas JSON</td>
+</tr>
+<tr>
+<td>Vista</td>
+<td><code>templates/dashboard.html</code></td>
+<td>Estructura del panel (Jinja2 sin variables)</td>
+</tr>
+<tr>
+<td>Cliente</td>
+<td><code>static/js/dashboard.js</code></td>
+<td>Polling, renderizado, filtros, Chart.js</td>
+</tr>
+<tr>
+<td>Estilo</td>
+<td><code>static/css/dashboard.css</code></td>
+<td>Tema claro, tarjetas, tablas, animaciones, responsive</td>
+</tr>
+</tbody>
+</table>
+<p>Flujo de una lectura mock:</p>
+<ol>
+<li><code>initialize()</code> crea tablas y siembra 200 dispositivos.</li>
+<li><code>start_generator()</code> lanza un <code>threading.Thread(daemon=True)</code>.</li>
+<li>El hilo ejecuta <code>generate_all_readings()</code> de inmediato y luego cada 30 s.</li>
+<li>Por dispositivo genera temperatura (y humedad si aplica).</li>
+<li>Inserta en <code>readings</code>; si viola un límite, inserta en <code>alerts</code>.</li>
+<li>El navegador consulta <code>/api/readings/current</code>, <code>/api/alerts</code> y <code>/api/stats</code>
+   cada 10 s y repinta.</li>
+<li>Al seleccionar un dispositivo, <code>/api/readings/latest/&lt;id&gt;</code> alimenta Chart.js
+   con 60 puntos.</li>
+</ol>
+<p>Decisiones visibles:</p>
+<ul>
+<li><strong>Sin ORM</strong>: SQL directo con <code>sqlite3</code> y <code>Row</code>; menos dependencias, sin
+  migraciones automáticas.</li>
+<li><strong>Sin build de frontend</strong>: CDN para Chart.js y Font Awesome; cero Node.</li>
+<li><strong>Generación en el mismo proceso</strong>: simple para demo, problemático con
+  múltiples workers.</li>
+<li><strong>Una conexión por operación</strong>: correcto a baja concurrencia, costoso al
+  escalar.</li>
+<li><strong>Timestamps UTC</strong>: <code>CURRENT_TIMESTAMP</code> de SQLite es UTC sin sufijo; el
+  frontend agrega <code>Z</code>. La API <strong>no</strong> declara zona horaria.</li>
+</ul>
+<hr/>
+<h2 id="stack-y-requisitos">Stack y requisitos</h2>
+<table>
+<thead>
+<tr>
+<th>Capa</th>
+<th>Tecnología</th>
+<th>Versión</th>
+<th>Notas</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Lenguaje</td>
+<td>Python</td>
+<td>3.10+</td>
+<td><em>Type hints</em> modernos</td>
+</tr>
+<tr>
+<td>Web</td>
+<td>Flask</td>
+<td><code>&gt;=3.0.0</code></td>
+<td>Sin extensions salvo CORS</td>
+</tr>
+<tr>
+<td>CORS</td>
+<td>Flask-CORS</td>
+<td><code>&gt;=4.0.0</code></td>
+<td><code>CORS(app)</code> global, sin allowlist</td>
+</tr>
+<tr>
+<td>Base de datos</td>
+<td>SQLite</td>
+<td>3.x (stdlib)</td>
+<td>WAL, FK, índices</td>
+</tr>
+<tr>
+<td>Plantillas</td>
+<td>Jinja2</td>
+<td>con Flask</td>
+<td>Plantilla estática</td>
+</tr>
+<tr>
+<td>Gráficos</td>
+<td>Chart.js</td>
+<td>4.4.1 (CDN)</td>
+<td>Línea con doble eje Y</td>
+</tr>
+<tr>
+<td>Iconos</td>
+<td>Font Awesome</td>
+<td>6.5.1 (CDN)</td>
+<td>Requiere Internet en el cliente</td>
+</tr>
+<tr>
+<td>WSGI</td>
+<td>Flask dev server</td>
+<td>—</td>
+<td>Producción: Gunicorn + Nginx</td>
+</tr>
+</tbody>
+</table>
+<p>Dependencias de Python (definidas en <strong><code>requirements.txt</code></strong>):</p>
+<pre><code>flask&gt;=3.0.0
+flask-cors&gt;=4.0.0
+</code></pre>
+<p>Sin dependencias nativas, sin Node, sin base externa: todo cabe en un
+directorio y un archivo <code>.db</code>.</p>
+<h3 id="servidor">Servidor</h3>
+<table>
+<thead>
+<tr>
+<th>Recurso</th>
+<th>Mínimo (demo)</th>
+<th>Recomendado (piloto)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU</td>
+<td>2 núcleos</td>
+<td>4 núcleos</td>
+</tr>
+<tr>
+<td>RAM</td>
+<td>1 GB</td>
+<td>4 GB</td>
+</tr>
+<tr>
+<td>Disco</td>
+<td>500 MB + crecimiento de BD</td>
+<td>20 GB SSD</td>
+</tr>
+<tr>
+<td>SO</td>
+<td>Linux, macOS, WSL2</td>
+<td>Debian 12 / Ubuntu 22.04 / Raspberry Pi OS</td>
+</tr>
+<tr>
+<td>Python</td>
+<td>3.10</td>
+<td>3.12</td>
+</tr>
+<tr>
+<td>Red</td>
+<td>Salida a Internet solo para CDN</td>
+<td>Reverse proxy con TLS</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cliente">Cliente</h3>
+<p>Navegador con JavaScript (Chrome 90+, Firefox 88+, Edge 90+, Safari 14+),
+resolución mínima 1280×720 y <strong>acceso a Internet</strong> para los CDN. En una red
+hospitalaria segmentada hay que alojar Chart.js y Font Awesome localmente.</p>
+<hr/>
+<h2 id="instalacion">Instalación</h2>
+<p>Las dependencias están declaradas en <strong><code>requirements.txt</code></strong>. Los comandos se
+ejecutan dentro de la carpeta de la versión:</p>
+<pre><code class="language-bash">cd versions/hospital-lorawan-dashboard
+</code></pre>
+<h3 id="1-entorno-virtual">1. Entorno virtual</h3>
+<pre><code class="language-bash">python3 -m venv venv
+source venv/bin/activate        # Linux / macOS
+venv\Scripts\activate           # Windows (cmd)
+venv\Scripts\Activate.ps1       # Windows (PowerShell)
+</code></pre>
+<h3 id="2-dependencias">2. Dependencias</h3>
+<pre><code class="language-bash">python -m pip install --upgrade pip
 pip install -r requirements.txt
-python app.py</pre></div>
-  </div>
-</div></section>
+</code></pre>
+<h3 id="3-verificacion">3. Verificación</h3>
+<pre><code class="language-bash">python -c "import flask, flask_cors; print(flask.__version__)"
+</code></pre>
+<p>Debe imprimir <code>3.x</code>. Si falla, el entorno no está activo o <code>pip</code> apunta a otro
+intérprete.</p>
+<blockquote>
+<p><strong>Rutas</strong>: <code>config.py</code> calcula <code>DB_PATH</code> como
+<code>os.path.join(os.path.dirname(os.path.abspath(__file__)), "hospital_lorawan.db")</code>.
+La base se crea <strong>junto a los <code>.py</code></strong>, no en el directorio desde donde se
+lanza el comando. En un directorio de solo lectura el arranque falla con
+<code>sqlite3.OperationalError: unable to open database file</code>.</p>
+</blockquote>
+<h3 id="4-estructura-minima-resultante">4. Estructura mínima resultante</h3>
+<pre><code>hospital-lorawan-dashboard/
+├── venv/                     # no versionado
+├── app.py
+├── config.py
+├── database.py
+├── data_generator.py
+├── models.py
+├── routes.py
+├── requirements.txt
+├── hospital_lorawan.db       # se crea al primer arranque
+├── templates/dashboard.html
+└── static/{css,js}/...
+</code></pre>
+<hr/>
+<h2 id="ejecucion">Ejecución</h2>
+<h3 id="modo-desarrollo">Modo desarrollo</h3>
+<pre><code class="language-bash">python app.py
+</code></pre>
+<p>Salida esperada (resumida):</p>
+<pre><code>[INFO] Iniciando Dashboard de Monitoreo Hospitalario LoRaWAN
+[INFO] Paso 1/2: Inicializando base de datos...
+[INFO] Tablas de base de datos creadas/verificadas correctamente.
+[INFO] Seed completado: 200 dispositivos insertados.
+[INFO] Paso 2/2: Arrancando generador de datos LoRaWAN...
+[INFO] Thread generador de datos iniciado.
+[INFO] Sistema listo. Navega a http://localhost:5000
+ * Serving Flask app 'app'
+ * Debug mode: on
+</code></pre>
+<p>Abrir <a href="http://localhost:5000">http://localhost:5000</a>.</p>
+<blockquote>
+<p><strong>Ojo con el <em>reloader</em></strong>: <code>FLASK_DEBUG = True</code> activa el <em>reloader</em> de
+Werkzeug, que ejecuta el proceso dos veces. El hilo generador arranca en
+ambos, así que se ven rondas duplicadas en los primeros segundos y logs
+repetidos. Para demos estables, <code>FLASK_DEBUG = False</code>.</p>
+</blockquote>
+<h3 id="verificacion-rapida">Verificación rápida</h3>
+<pre><code class="language-bash">curl -s http://localhost:5000/health
+# {"service":"Hospital LoRaWAN Dashboard","status":"ok","version":"1.0.0"}
 
-<section class="section tight" id="docs"><div class="wrap">
-  <div class="section-head reveal"><div class="kicker">06 — Documentación</div><h2>Para usar y para entender.</h2><p class="section-sub">Cada documento está en el repositorio, versionado junto al código.</p></div>
-  <div class="docs"><a class="doc reveal" href="https://github.com/jmadasme/hospital-lorawan/blob/main/docs/datasheet.md" target="_blank" rel="noopener"><span class="tag">DATASHEET</span><h4>Manual de operación</h4><p>Instalación, uso, configuración y troubleshooting.</p></a><a class="doc reveal" href="https://github.com/jmadasme/hospital-lorawan/blob/main/docs/developer.md" target="_blank" rel="noopener"><span class="tag">DEVELOPER</span><h4>Guía de código</h4><p>Arquitectura, módulos, contratos y extensión.</p></a><a class="doc reveal" href="https://github.com/jmadasme/hospital-lorawan/blob/main/docs/REFERENCES.md" target="_blank" rel="noopener"><span class="tag">REFERENCES</span><h4>Referencias</h4><p>Fuentes oficiales y documentación de las tecnologías.</p></a></div>
-</div></section>
+curl -s http://localhost:5000/api/stats | head -c 400
+</code></pre>
+<p>Para detener: <code>Ctrl+C</code>. El hilo es <em>daemon</em> y muere con el proceso;
+<code>stop_generator()</code> existe pero no está expuesta por ninguna ruta ni manejador
+de señales.</p>
+<hr/>
+<h2 id="uso-del-dashboard">Uso del dashboard</h2>
+<p><img alt="Flujo de datos" loading="lazy" src="rich/data-flow.svg"/></p>
+<h3 id="barra-superior">Barra superior</h3>
+<p>Nombre del sistema, indicador <strong>EN VIVO</strong> pulsante, hora de la última
+actualización exitosa y botón de refresco manual.</p>
+<h3 id="tarjetas-de-resumen">Tarjetas de resumen</h3>
+<table>
+<thead>
+<tr>
+<th>Tarjeta</th>
+<th>Origen</th>
+<th>Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Total Dispositivos</td>
+<td><code>COUNT(*) FROM devices WHERE active=1</code></td>
+<td>200 por defecto</td>
+</tr>
+<tr>
+<td>Dispositivos OK</td>
+<td>Conteo en cliente de <code>status === "ok"</code></td>
+<td>Depende de alertas <strong>no resueltas</strong></td>
+</tr>
+<tr>
+<td>Alertas Activas</td>
+<td><code>COUNT(*) FROM alerts WHERE resolved=0</code></td>
+<td>Cuenta alertas, no dispositivos</td>
+</tr>
+<tr>
+<td>Total Lecturas</td>
+<td><code>COUNT(*) FROM readings</code></td>
+<td>Crece ~576 000/día</td>
+</tr>
+<tr>
+<td>Lecturas 24h</td>
+<td><code>timestamp &gt;= datetime('now','-24 hours')</code></td>
+<td>UTC</td>
+</tr>
+</tbody>
+</table>
+<h3 id="filtros">Filtros</h3>
+<ul>
+<li><strong>Tipo</strong>: lista fija de 11 tipos.</li>
+<li><strong>Buscar</strong>: texto libre contra nombre y ubicación.</li>
+<li><strong>Estado</strong>: Todos / OK / Alerta, combinable con los anteriores.</li>
+</ul>
+<p>Son <strong>de cliente</strong>: no vuelven a consultar la API; la tabla mantiene las 200
+filas en memoria y solo oculta las que no coinciden.</p>
+<h3 id="grafico-de-tendencia">Gráfico de tendencia</h3>
+<ul>
+<li>Selección por desplegable o clic en el nombre de un dispositivo.</li>
+<li>Temperatura (°C) en el eje izquierdo y humedad (%HR) en el derecho, oculta si
+  el dispositivo no reporta humedad.</li>
+<li>Últimos 60 puntos (≈30 min con generación cada 30 s).</li>
+<li><strong>No se refresca solo</strong>: se redibuja al cambiar de dispositivo o refrescar.</li>
+</ul>
+<h3 id="tabla-de-dispositivos">Tabla de dispositivos</h3>
+<p>Columnas <code>#</code>, Nombre, Tipo, Ubicación, Temperatura, Humedad, Estado, Última
+lectura. El color de la temperatura depende de la desviación respecto del punto
+medio (verde dentro de rango, ámbar hasta 3 °C, rojo más). Las filas en alerta
+llevan fondo rojizo y badge parpadeante.</p>
+<h3 id="panel-de-alertas-y-ultimas-lecturas">Panel de alertas y últimas lecturas</h3>
+<p>Panel con las 20 alertas no resueltas más recientes (mensaje y severidad) y
+tabla con las 100 lecturas más recientes, con refresco independiente.</p>
+<hr/>
+<h2 id="modelo-de-datos">Modelo de datos</h2>
+<p>SQLite, tres tablas y cinco índices. DDL efectivo de
+<code>database.create_tables()</code>:</p>
+<pre><code class="language-sql">CREATE TABLE devices (
+    id            INTEGER PRIMARY KEY AUTOINCREMENT,
+    device_type   TEXT NOT NULL,
+    name          TEXT NOT NULL,
+    location      TEXT,
+    temp_min      REAL NOT NULL,
+    temp_max      REAL NOT NULL,
+    humidity_min  REAL,
+    humidity_max  REAL,
+    active        INTEGER DEFAULT 1
+);
 
+CREATE TABLE readings (
+    id          INTEGER PRIMARY KEY AUTOINCREMENT,
+    device_id   INTEGER NOT NULL,
+    temperature REAL NOT NULL,
+    humidity    REAL,
+    timestamp   DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (device_id) REFERENCES devices(id)
+);
+
+CREATE TABLE alerts (
+    id         INTEGER PRIMARY KEY AUTOINCREMENT,
+    device_id  INTEGER NOT NULL,
+    reading_id INTEGER,
+    parameter  TEXT NOT NULL,
+    value      REAL NOT NULL,
+    min_limit  REAL,
+    max_limit  REAL,
+    message    TEXT NOT NULL,
+    severity   TEXT DEFAULT 'warning',
+    resolved   INTEGER DEFAULT 0,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (device_id) REFERENCES devices(id)
+);
+
+CREATE INDEX idx_readings_device_id ON readings(device_id);
+CREATE INDEX idx_readings_timestamp ON readings(timestamp);
+CREATE INDEX idx_alerts_device_id   ON alerts(device_id);
+CREATE INDEX idx_alerts_resolved    ON alerts(resolved);
+CREATE INDEX idx_alerts_created_at  ON alerts(created_at);
+</code></pre>
+<p>Relaciones:</p>
+<pre><code>devices 1 ──── N readings
+devices 1 ──── N alerts
+readings 1 ─── 0..1 alerts   (reading_id, enlace lógico sin FK declarada)
+</code></pre>
+<p><code>PRAGMA foreign_keys=ON</code> se activa en cada conexión, así que <code>device_id</code> sí se
+valida; <code>alerts.reading_id</code> no tiene restricción.</p>
+<table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Semántica</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>device_type</code></td>
+<td>Clave del diccionario <code>DEVICE_TYPES</code></td>
+</tr>
+<tr>
+<td><code>temp_min/max</code></td>
+<td>Límites <strong>copiados</strong> al sembrar; cambiarlos en <code>config.py</code> no altera filas existentes</td>
+</tr>
+<tr>
+<td><code>humidity_min/max</code></td>
+<td>Solo poblados en <code>ambiental</code></td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td>0 excluye de listados y de la generación</td>
+</tr>
+<tr>
+<td><code>readings.timestamp</code></td>
+<td>UTC, <code>YYYY-MM-DD HH:MM:SS</code>, sin sufijo de zona</td>
+</tr>
+<tr>
+<td><code>alerts.parameter</code></td>
+<td><code>temperature</code> o <code>humidity</code></td>
+</tr>
+<tr>
+<td><code>alerts.severity</code></td>
+<td><code>warning</code> o <code>critical</code></td>
+</tr>
+<tr>
+<td><code>alerts.resolved</code></td>
+<td>0 = activa; <strong>ningún código lo pone en 1</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Invariantes que el código <strong>no</strong> garantiza: sin <code>CHECK</code> sobre <code>severity</code>,
+<code>parameter</code> ni <code>resolved</code>; sin unicidad de nombre; sin borrado en cascada; sin
+tabla de migraciones ni <code>PRAGMA user_version</code>.</p>
+<h3 id="volumen">Volumen</h3>
+<p>200 filas por ronda, 6 666 por hora, <strong>~576 000 por día</strong>, ~4 millones por
+semana. Medición real:</p>
+<pre><code class="language-bash">sqlite3 hospital_lorawan.db \
+  "SELECT COUNT(*) AS lecturas, datetime(MIN(timestamp)) AS desde,
+          datetime(MAX(timestamp)) AS hasta FROM readings;"
+</code></pre>
+<hr/>
+<h2 id="api-rest">API REST</h2>
+<p>Envoltura de éxito: <code>{"success": true, "data": ..., "count": N}</code>. Errores:
+<code>{"success": false, "error": "..."}</code> con 404, 415 o 500. Sin versión en la ruta
+ni paginación por cursor.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Ruta</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/</code></td>
+<td>Dashboard HTML</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/health</code></td>
+<td>Estado del servicio</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/devices</code></td>
+<td>Dispositivos activos; <code>device_type</code>, <code>search</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/devices/&lt;id&gt;</code></td>
+<td>Dispositivo + <code>last_reading</code>; 404 si no existe</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/readings</code></td>
+<td>Lecturas recientes; <code>limit</code> (100), <code>device_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/readings/current</code></td>
+<td>Última lectura por dispositivo + <code>status</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/readings/latest/&lt;id&gt;</code></td>
+<td>60 lecturas ascendentes</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/alerts</code></td>
+<td>Alertas no resueltas; <code>limit</code> (20), <code>device_id</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/stats</code></td>
+<td>Agregados y distribución por tipo</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/generate</code></td>
+<td>Fuerza una ronda mock</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-bash">curl -s "http://localhost:5000/api/devices?device_type=freezer_80" | python -m json.tool
+curl -s "http://localhost:5000/api/devices?search=Laboratorio"
+curl -s http://localhost:5000/api/readings/current | python -m json.tool | head -40
+curl -s http://localhost:5000/api/readings/latest/141
+curl -s -X POST http://localhost:5000/api/generate \
+     -H "Content-Type: application/json" -d '{}'
+# {"count":200,"message":"Generadas 200 lecturas correctamente.","success":true}
+
+curl -s -X POST http://localhost:5000/api/generate
+# HTTP 415 {"success":false,"error":"Content-Type no soportado. ..."}
+</code></pre>
+<p>Forma de <code>/api/readings/current</code> (una fila por dispositivo):</p>
+<pre><code class="language-json">{
+  "device_id": 1,
+  "device_type": "vitrina_refrigerada",
+  "name": "Vitrina Refrigerada #001",
+  "location": "Pasillo A",
+  "temp_min": 2.0, "temp_max": 8.0,
+  "humidity_min": null, "humidity_max": null,
+  "reading_id": 15234,
+  "temperature": 5.2, "humidity": null,
+  "timestamp": "2026-06-10 14:30:00",
+  "alert_id": null, "alert_severity": null,
+  "status": "ok"
+}
+</code></pre>
+<p><code>status</code> se calcula en el servidor: <code>alert</code> si existe <strong>cualquier</strong> alerta no
+resuelta para el dispositivo <strong>o</strong> si la lectura actual viola un límite.</p>
+<p>Forma de <code>/api/stats</code>:</p>
+<pre><code class="language-json">{
+  "success": true,
+  "data": {
+    "total_devices": 200,
+    "devices_with_alerts": 37,
+    "total_readings": 184320,
+    "total_alerts": 4211,
+    "last_update": "2026-06-10 14:30:00",
+    "readings_24h": 184320,
+    "type_distribution": [{"device_type": "ambiental", "count": 30}],
+    "recent_alerts": []
+  }
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Caso</th>
+<th>Código</th>
+<th>Cuerpo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dispositivo inexistente</td>
+<td>404</td>
+<td><code>{"success": false, "error": "Dispositivo no encontrado"}</code></td>
+</tr>
+<tr>
+<td><code>POST /api/generate</code> sin JSON/form</td>
+<td>415</td>
+<td>mensaje sobre <code>Content-Type</code></td>
+</tr>
+<tr>
+<td>Excepción al generar</td>
+<td>500</td>
+<td><code>{"success": false, "error": "Error al generar lecturas: ..."}</code></td>
+</tr>
+</tbody>
+</table>
+<p>No se valida <code>limit</code> (<code>?limit=99999999</code> intenta devolver todo). No hay <em>rate
+limiting</em> ni autenticación.</p>
+<hr/>
+<h2 id="flujo-de-datos-simulado">Flujo de datos simulado</h2>
+<h3 id="algoritmo-de-temperatura">Algoritmo de temperatura</h3>
+<pre><code>center = (temp_min + temp_max) / 2
+si random() &lt; 0.10:                      # 10 % de las lecturas
+    offset = uniform(0.05, 0.30) * max(|temp_max - temp_min|, 1.0)
+    valor = temp_max + offset   (50 %)
+          = temp_min - offset   (50 %)
+si no:
+    si tipo estable (freezers y congelador combinado):
+        valor = gauss(center, 0.3) acotado a [temp_min - 0.5, temp_max + 0.5]
+    si no:
+        valor = gauss(center, 0.15 * (temp_max - temp_min)) acotado al rango
+redondear a 2 decimales
+</code></pre>
+<h3 id="humedad">Humedad</h3>
+<p>Solo para dispositivos con <code>humidity_min</code>/<code>humidity_max</code> (los 30 <code>ambiental</code>).
+Misma lógica: 10 % fuera de rango (acotado a 0–100), 90 % gaussiana con
+<code>std_dev = 0.10 * rango</code>.</p>
+<h3 id="severidad">Severidad</h3>
+<pre><code class="language-python">severity = "critical" if abs(temp - temp_min) &gt; 2.0 or abs(temp - temp_max) &gt; 2.0 else "warning"
+</code></pre>
+<p>La humedad siempre es <code>warning</code>. La comparación usa <strong>ambos</strong> límites: con
+rangos mayores a 2 °C, una excursión por encima del máximo suele resultar
+<code>critical</code> porque <code>temp - temp_min</code> supera 2.</p>
+<h3 id="efectos-secundarios-matematicos">Efectos secundarios matemáticos</h3>
+<ul>
+<li>En freezers (−20.5 a −19.5) el acotado permite <code>[−21.0, −19.0]</code>, es decir
+  valores fuera de rango <strong>además</strong> del 10 % nominal. La tasa efectiva de
+  alerta en esos tipos es mayor que la configurada.</li>
+<li>No hay <strong>inercia térmica</strong> entre rondas: cada lectura es independiente. Un
+  freezer puede saltar de −20.1 a −19.4 y volver; en la realidad la masa
+  térmica suaviza la serie.</li>
+<li>El 10 % se sortea por lectura y por magnitud, así que un ambiental puede
+  generar dos alertas en la misma ronda.</li>
+</ul>
+<h3 id="ritmo-temporal">Ritmo temporal</h3>
+<table>
+<thead>
+<tr>
+<th>Evento</th>
+<th>Cada</th>
+<th>Efecto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Generación</td>
+<td>30 s</td>
+<td>200 INSERT en <code>readings</code>, 0–40 en <code>alerts</code></td>
+</tr>
+<tr>
+<td>Polling UI</td>
+<td>10 s</td>
+<td>3 GET (<code>current</code>, <code>alerts</code>, <code>stats</code>)</td>
+</tr>
+<tr>
+<td>Gráfico</td>
+<td>Al seleccionar</td>
+<td>1 GET de 60 filas</td>
+</tr>
+<tr>
+<td>Histórico</td>
+<td>Manual</td>
+<td>1 GET de 100 filas</td>
+</tr>
+</tbody>
+</table>
+<p>Con un navegador abierto: ~18 peticiones por minuto, cada una con una consulta
+que recorre 200 dispositivos. Carga trivial para SQLite, pero relevante con
+muchas pestañas.</p>
+<hr/>
+<h2 id="flujo-lorawan-real-diseno">Flujo LoRaWAN real (diseño)</h2>
+<p>Esta sección describe <strong>cómo se integraría</strong> una red real. No hay código de
+ingestión en 1.0.0; los bloques son plantillas.</p>
+<p><img alt="Pila LoRaWAN" loading="lazy" src="rich/lorawan-stack.svg"/></p>
+<pre><code>Nodos (Clase A) ⇢ Gateway(s) → Network Server → Application Server
+                                                     │
+                                     MQTT (TLS) o webhook HTTPS
+                                                     ▼
+                                       bridge de ingestión
+                                                     │
+                                   mapeo DevEUI → devices.id
+                                                     ▼
+                                            SQLite + dashboard
+</code></pre>
+<h3 id="registro-de-dispositivos">Registro de dispositivos</h3>
+<p>En TTN o ChirpStack se crea una <em>application</em> y se registran los nodos con
+OTAA. Se obtiene <code>DevEUI</code>, <code>JoinEUI</code>, <code>AppKey</code> (secreto, <strong>nunca</strong> en el
+repositorio) y un <em>payload decoder</em>. El dashboard necesita una columna que hoy
+no existe: <code>dev_eui TEXT UNIQUE</code> en <code>devices</code>. Para un piloto alcanza con un
+diccionario en el bridge (<code>{"70B3D57ED0000001": 141, ...}</code>).</p>
+<h3 id="formato-de-payload-ejemplo-5-bytes-big-endian">Formato de payload (ejemplo, 5 bytes big-endian)</h3>
+<table>
+<thead>
+<tr>
+<th>Bytes</th>
+<th>Campo</th>
+<th>Escala</th>
+<th>Unidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–1</td>
+<td><code>temperature</code></td>
+<td>int16 / 100</td>
+<td>°C</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>humidity</code></td>
+<td>uint8</td>
+<td>% HR</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>battery</code></td>
+<td>uint8 / 10</td>
+<td>V</td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>flags</code></td>
+<td>bitfield</td>
+<td>puerta, falla</td>
+</tr>
+</tbody>
+</table>
+<p>Decoder para TTN (se pega en la consola de la aplicación):</p>
+<pre><code class="language-js">function decodeUplink(input) {
+  const b = input.bytes;
+  const rawT = (b[0] &lt;&lt; 8) | b[1];
+  const temp = ((rawT &amp; 0x8000 ? rawT - 0x10000 : rawT) / 100);
+  return {
+    data: {
+      temperature: temp,
+      humidity: b[2],
+      battery_v: b[3] / 10,
+      door_open: !!(b[4] &amp; 0x01),
+      fault: !!(b[4] &amp; 0x02)
+    },
+    warnings: [], errors: []
+  };
+}
+</code></pre>
+<h3 id="ingestion-por-mqtt-ttn-v3">Ingestión por MQTT (TTN v3)</h3>
+<pre><code class="language-python"># bridge_ttn.py — esqueleto, NO incluido en la versión 1.0.0
+import json, os
+import paho.mqtt.client as mqtt
+
+APP_ID  = os.environ["TTN_APP_ID"]
+API_KEY = os.environ["TTN_API_KEY"]          # nunca hardcodear
+BROKER  = "eu1.cloud.thethings.network"      # verificar host por región
+TOPIC   = f"v3/{APP_ID}/devices/+/up"
+EUI_MAP = {"70B3D57ED0000001": 141}          # DevEUI → devices.id
+
+def on_connect(client, userdata, flags, reason_code, properties=None):
+    client.subscribe(TOPIC, qos=1)
+
+def on_message(client, userdata, msg):
+    payload = json.loads(msg.payload)
+    eui = payload["end_device_ids"]["dev_eui"]
+    decoded = payload["uplink_message"].get("decoded_payload") or {}
+    device_id = EUI_MAP.get(eui)
+    if device_id is None or "temperature" not in decoded:
+        return
+    # INSERT en readings + evaluación de límites (misma lógica que el mock)
+</code></pre>
+<p>Notas de integración:</p>
+<ul>
+<li><strong>TLS obligatorio</strong> (8883 con CA del servidor); nunca 1883 en abierto.</li>
+<li><strong>Credenciales por entorno</strong>, nunca en el código.</li>
+<li><strong>QoS 1</strong> implica duplicados: el bridge debe ser idempotente (tabla
+  <code>processed(f_cnt, dev_eui)</code> o restricción única por <code>(device_id, f_cnt)</code>).</li>
+<li><strong><code>f_cnt</code></strong>: descartar uplinks con contador menor o igual al último visto.</li>
+<li><strong>Fragmentación</strong>: payloads parciales requieren reensamblado; con 5 bytes no
+  aplica.</li>
+</ul>
+<h3 id="ingestion-por-webhook-chirpstack-ttn">Ingestión por webhook (ChirpStack / TTN)</h3>
+<p>Alternativa sin broker: el servidor de red hace <code>POST /ingest</code> con el evento
+<code>up</code>. Requiere token compartido en cabecera, límite de tamaño, <em>rate limit</em>,
+respuesta 2xx rápida y registro de <code>deduplication_id</code> para descartar reenvíos.
+El dashboard no tiene esa ruta; agregarla implica un blueprint y configuración
+(<code>INGEST_TOKEN</code>, <code>INGEST_ENABLED</code>).</p>
+<h3 id="desactivar-el-mock">Desactivar el mock</h3>
+<p>En <code>app.py</code>, <code>initialize()</code> llama siempre a <code>start_generator()</code>. Para producción:</p>
+<pre><code class="language-python">def initialize() -&gt; None:
+    from database import initialize_database
+    initialize_database()
+    if os.environ.get("MOCK_DATA", "0") == "1":
+        from data_generator import start_generator
+        start_generator()
+</code></pre>
+<p>Es un cambio de tres líneas, <strong>no aplicado</strong> para preservar el comportamiento
+reproducible de la versión publicada.</p>
+<h3 id="diferencias-operativas">Diferencias operativas</h3>
+<table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>Mock</th>
+<th>Real</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Latencia</td>
+<td>≤30 s garantizado</td>
+<td>5–15 min típico</td>
+</tr>
+<tr>
+<td>Silencio</td>
+<td>Imposible</td>
+<td>Frecuente (batería, cobertura)</td>
+</tr>
+<tr>
+<td>Duplicados</td>
+<td>No</td>
+<td>Sí (QoS 1, varios gateways)</td>
+</tr>
+<tr>
+<td>Reloj</td>
+<td>Del servidor</td>
+<td>Del servidor de red</td>
+</tr>
+<tr>
+<td>Calidad</td>
+<td>Sintética perfecta</td>
+<td>Ruido, deriva, autocalentamiento</td>
+</tr>
+<tr>
+<td>Volumen</td>
+<td>Constante</td>
+<td>Variable, con ráfagas tras reconexión</td>
+</tr>
+</tbody>
+</table>
+<hr/>
+<h2 id="simulacion-y-escenarios">Simulación y escenarios</h2>
+<h3 id="forzar-una-ronda">Forzar una ronda</h3>
+<pre><code class="language-bash">curl -X POST http://localhost:5000/api/generate \
+     -H "Content-Type: application/json" -d '{}'
+</code></pre>
+<p>Devuelve el número de lecturas insertadas (200 si todos están activos).</p>
+<h3 id="cambiar-la-densidad-de-fallas">Cambiar la densidad de fallas</h3>
+<pre><code class="language-python">OUT_OF_RANGE_PROBABILITY = 0.10   # 0.0 = nunca; 1.0 = todo fuera de rango
+</code></pre>
+<p>Con <code>0.0</code> el panel queda vacío y todas las tarjetas muestran "todo OK" (siempre
+que no haya alertas históricas). Con <code>1.0</code> se saturan alertas y se evalúa el
+comportamiento visual.</p>
+<h3 id="escenario-cadena-de-frio-sana">Escenario: cadena de frío sana</h3>
+<p><code>OUT_OF_RANGE_PROBABILITY = 0.0</code>, borrar <code>hospital_lorawan.db</code>, reiniciar.
+Tarjetas en verde y cero alertas.</p>
+<h3 id="escenario-freezers-en-riesgo">Escenario: freezers en riesgo</h3>
+<p><code>OUT_OF_RANGE_PROBABILITY = 0.3</code>, filtrar <code>freezer_80</code> (4 dispositivos) y
+observar cómo la serie salta alrededor de −80 °C sin suavizado: evidencia la
+ausencia de inercia térmica en el mock.</p>
+<h3 id="escenario-dispositivo-puntual">Escenario: dispositivo puntual</h3>
+<p>No hay endpoint para inyectar una lectura arbitraria; la vía es SQL directo:</p>
+<pre><code class="language-bash">sqlite3 hospital_lorawan.db &lt;&lt;'SQL'
+INSERT INTO readings (device_id, temperature, humidity)
+VALUES (141, -75.0, NULL);
+INSERT INTO alerts (device_id, reading_id, parameter, value, min_limit,
+                    max_limit, message, severity)
+VALUES (141, last_insert_rowid(), 'temperature', -75.0, -80.5, -79.5,
+        'Temperatura alta: -75.0°C (máximo: -79.5°C)', 'critical');
+SQL
+</code></pre>
+<p>Al refrescar, el dispositivo aparece en alerta y el gráfico muestra el pico.</p>
+<hr/>
+<h2 id="despliegue">Despliegue</h2>
+<h3 id="gunicorn-nginx-recomendado-para-piloto">Gunicorn + Nginx (recomendado para piloto)</h3>
+<p><strong>Un solo worker</strong>: el generador no está sincronizado entre procesos; con
+<code>--workers 2</code> habría dos generadores duplicando filas.</p>
+<pre><code class="language-bash">pip install gunicorn
+gunicorn --workers 1 --threads 4 --bind 127.0.0.1:8000 app:app
+</code></pre>
+<p><code>app:app</code> importa la app <strong>sin</strong> ejecutar <code>initialize()</code>, que solo corre bajo
+<code>__main__</code>. Con Gunicorn hay que inicializar la base aparte: (1) ejecutar una
+vez <code>python app.py</code> para crear y sembrar la BD, aceptando que no habrá
+generación, o (2) añadir un <code>wsgi.py</code> que llame a <code>initialize()</code> antes de
+exponer <code>app</code>.</p>
+<p>Unidad systemd mínima:</p>
+<pre><code class="language-ini">[Unit]
+Description=Hospital LoRaWAN Dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=monitor
+WorkingDirectory=/opt/hospital-lorawan
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/hospital-lorawan/venv/bin/gunicorn \
+          --workers 1 --threads 4 --bind 127.0.0.1:8000 app:app
+Restart=always
+RestartSec=5
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ReadWritePaths=/opt/hospital-lorawan
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<p>Nginx como terminador TLS y servidor de estáticos:</p>
+<pre><code class="language-nginx">server {
+    listen 443 ssl http2;
+    server_name monitor.hospital.local;
+    ssl_certificate     /etc/ssl/certs/monitor.crt;
+    ssl_certificate_key /etc/ssl/private/monitor.key;
+
+    location /static/ {
+        alias /opt/hospital-lorawan/static/;
+        expires 1h;
+    }
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+    }
+}
+</code></pre>
+<blockquote>
+<p><code>FLASK_DEBUG = True</code> es <strong>incompatible con producción</strong>: expone el depurador
+interactivo de Werkzeug, que permite ejecución remota de código si el puerto
+es accesible.</p>
+</blockquote>
+<h3 id="raspberry-pi-como-piloto">Raspberry Pi como piloto</h3>
+<p>Funciona en Pi 3/4/5 con Raspberry Pi OS de 64 bits. Usar SSD o microSD de
+grado industrial (WAL es sensible a cortes), programar respaldos y
+<code>PRAGMA wal_checkpoint(TRUNCATE)</code> periódico, y alojar los CDN localmente si la
+red está aislada.</p>
+<h3 id="checklist-de-puesta-en-marcha">Checklist de puesta en marcha</h3>
+<ul>
+<li>[ ] <code>FLASK_DEBUG = False</code>.</li>
+<li>[ ] CORS restringido a orígenes reales.</li>
+<li>[ ] TLS terminado en el proxy.</li>
+<li>[ ] Autenticación delante del dashboard (basic auth o SSO).</li>
+<li>[ ] Espacio en disco suficiente y monitoreado.</li>
+<li>[ ] Respaldo automático de la BD.</li>
+<li>[ ] Generador mock detenido si hay fuente real.</li>
+<li>[ ] Zona horaria alineada (todo en UTC).</li>
+<li>[ ] Rotación de logs.</li>
+</ul>
+<hr/>
+<h2 id="seguridad">Seguridad</h2>
+<p>La versión 1.0.0 es un <strong>demostrador</strong>, no un sistema endurecido.</p>
+<table>
+<thead>
+<tr>
+<th>Riesgo</th>
+<th>Dónde</th>
+<th>Mitigación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sin autenticación</td>
+<td>Toda la app</td>
+<td>Proxy con basic auth, OIDC o VPN</td>
+</tr>
+<tr>
+<td>Sin autorización</td>
+<td>API completa</td>
+<td>Roles: lectura vs. acuse de alertas</td>
+</tr>
+<tr>
+<td>CORS abierto</td>
+<td><code>CORS(app)</code> global</td>
+<td><code>CORS(app, resources={r"/api/*": {"origins": [...]}})</code></td>
+</tr>
+<tr>
+<td>Debug activo</td>
+<td><code>FLASK_DEBUG = True</code></td>
+<td><code>False</code> en cualquier entorno compartido</td>
+</tr>
+<tr>
+<td>Escucha en <code>0.0.0.0</code></td>
+<td><code>FLASK_HOST</code></td>
+<td><code>127.0.0.1</code> detrás de proxy</td>
+</tr>
+<tr>
+<td>Sin TLS</td>
+<td>Flask directo</td>
+<td>Terminar TLS en Nginx/Traefik</td>
+</tr>
+<tr>
+<td>Sin rate limit</td>
+<td><code>/api/*</code></td>
+<td>Límite en el proxy (p. ej. 60 r/m por IP)</td>
+</tr>
+<tr>
+<td><code>POST /api/generate</code> abierto</td>
+<td>Ruta de escritura</td>
+<td>Deshabilitar o proteger con token</td>
+</tr>
+<tr>
+<td>Sin auditoría</td>
+<td>Base de datos</td>
+<td>Registrar accesos y cambios de estado</td>
+</tr>
+<tr>
+<td><code>limit</code> sin validar</td>
+<td><code>/api/readings</code></td>
+<td>Acotar a un máximo (p. ej. 1000)</td>
+</tr>
+<tr>
+<td>Errores con detalle interno</td>
+<td><code>routes.py</code> devuelve <code>str(e)</code></td>
+<td>Loguear y devolver mensaje genérico</td>
+</tr>
+</tbody>
+</table>
+<h3 id="secretos">Secretos</h3>
+<p>El repositorio <strong>no contiene credenciales</strong>. La base, los archivos WAL y
+cualquier <code>.env</code> están excluidos por <code>.gitignore</code>. Para una integración real:
+<code>TTN_API_KEY</code>, <code>MQTT_PASSWORD</code> e <code>INGEST_TOKEN</code> por variables de entorno, nunca
+en <code>config.py</code>, README ni capturas. Rotar claves al cambiar de operador. Los
+<code>AppKey</code> de los nodos se cargan en el servidor de red, no en el dashboard.</p>
+<h3 id="datos-sensibles">Datos sensibles</h3>
+<p>No se almacena información identificable de pacientes: solo temperaturas,
+humedad, nombres de equipos y ubicaciones genéricas ("Pasillo A", "Quirófano
+2"). Aun así, la ubicación de equipos y sus horarios de falla son información
+operativa interna.</p>
+<h3 id="superficie-de-ataque-real">Superficie de ataque real</h3>
+<ul>
+<li><code>/api/generate</code> permite insertar 200 filas por petición: un bucle trivial
+  infla la base y distorsiona métricas. Es el endpoint más peligroso.</li>
+<li>El <em>debugger</em> de Werkzeug expuesto es ejecución remota de código.</li>
+<li>El CORS abierto permite que cualquier sitio consulte la API desde el
+  navegador de un operador.</li>
+</ul>
+<hr/>
+<h2 id="limites-conocidos">Límites conocidos</h2>
+<p>Derivados de leer el código, no de la documentación previa. Son los que más
+sorprenden al operar la demo.</p>
+<ol>
+<li><strong>Las alertas nunca se resuelven.</strong> <code>alerts.resolved</code> se inicializa en 0 y
+   ningún código lo actualiza: no hay endpoint de acuse, job de cierre ni
+   transición al volver a rango. Por eso <code>Dispositivos OK</code> tiende a 0,
+   <code>Alertas Activas</code> crece de forma monótona (~20 alertas cada 30 s) y el
+   <code>status</code> de un dispositivo queda en <code>alert</code> para siempre. Cierre manual:</li>
+</ol>
+<p><code>bash
+   sqlite3 hospital_lorawan.db \
+     "UPDATE alerts SET resolved = 1 WHERE created_at &lt; datetime('now','-1 hour');"</code></p>
+<p>Para operación real hace falta <code>PATCH /api/alerts/&lt;id&gt;</code> y una regla de
+   negocio (acuse por operador, cierre por normalización sostenida).</p>
+<ol start="2">
+<li>
+<p><strong><code>Dispositivos OK</code> no significa "sanos".</strong> Mide "dispositivos sin alertas
+   pendientes", no "dentro de rango ahora".</p>
+</li>
+<li>
+<p><strong>Crecimiento sin retención.</strong> 576 000 filas/día; en una semana la tabla
+   supera 4 millones. <code>COUNT(*)</code> en <code>/api/stats</code> se vuelve costoso y hace falta
+   <code>VACUUM</code>.</p>
+</li>
+<li>
+<p><strong>Un solo proceso.</strong> Dos instancias o dos workers duplican lecturas y
+   compiten por el archivo. WAL tolera lectores concurrentes, pero un escritor
+   por vez.</p>
+</li>
+<li>
+<p><strong>Sin migraciones.</strong> Cambiar <code>DEVICE_TYPES</code> no actualiza dispositivos
+   existentes: el seed solo inserta si <code>devices</code> está vacía. Cambiar columnas
+   exige borrar la BD o migrar a mano.</p>
+</li>
+<li>
+<p><strong>Sin watchdog de silencio.</strong> Si un dispositivo dejara de reportar, el panel
+   seguiría mostrando su última lectura como actual; no hay comparación con
+   <code>now()</code> ni marca de "dato viejo".</p>
+</li>
+<li>
+<p><strong>Zona horaria implícita.</strong> La API entrega <code>"2026-06-10 14:30:00"</code> sin <code>Z</code>;
+   el JS asume UTC y agrega <code>Z</code>. Otros clientes que lo interpreten como hora
+   local mostrarán desfases.</p>
+</li>
+<li>
+<p><strong>Filtros solo de cliente.</strong> <code>applyFilters()</code> no consulta la API; si se
+   pagina el inventario, habrá que moverlos al servidor (las rutas ya aceptan
+   <code>device_type</code> y <code>search</code>, pero el frontend no las usa).</p>
+</li>
+<li>
+<p><strong>Gráfico no autoactualizable.</strong> Solo se redibuja al cambiar de selección o
+   refrescar; no hay <code>setInterval</code> sobre <code>updateChart()</code>.</p>
+</li>
+<li>
+<p><strong>Dependencia de CDN.</strong> Sin Internet en el cliente no hay gráfico ni iconos;
+    los datos siguen funcionando.</p>
+</li>
+</ol>
+<hr/>
+<h2 id="rendimiento-y-capacidad">Rendimiento y capacidad</h2>
+<table>
+<thead>
+<tr>
+<th>Operación</th>
+<th>Coste</th>
+<th>Comentario</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ronda de generación</td>
+<td>200 INSERT + hasta ~40 de alertas</td>
+<td>200 conexiones/commit por ronda</td>
+</tr>
+<tr>
+<td><code>/api/readings/current</code></td>
+<td>1 consulta con 2 subconsultas por fila</td>
+<td>~200 × 2 búsquedas por índice</td>
+</tr>
+<tr>
+<td><code>/api/stats</code></td>
+<td>4 <code>COUNT(*)</code> + 2 agregados</td>
+<td>Degrada con el histórico</td>
+</tr>
+<tr>
+<td><code>/api/readings/latest/&lt;id&gt;</code></td>
+<td>1 consulta indexada + <code>LIMIT 60</code></td>
+<td>Muy rápida</td>
+</tr>
+<tr>
+<td>Polling</td>
+<td>3 peticiones / 10 s por pestaña</td>
+<td>~18 r/m</td>
+</tr>
+</tbody>
+</table>
+<p>Cuellos de botella previsibles:</p>
+<ol>
+<li><code>COUNT(*)</code> sobre <code>readings</code> sin filtro: recorre índice completo.</li>
+<li>Apertura y cierre de conexión por INSERT: aceptable a 30 s, limitante si se
+   baja <code>GENERATION_INTERVAL</code>.</li>
+<li><code>sqlite3</code> síncrono en el hilo del generador: bloquea brevemente a los
+   lectores; WAL lo mitiga.</li>
+<li>Renderizado de 200 filas cada 10 s: se reescribe el <code>innerHTML</code> completo,
+   con <em>flicker</em> y pérdida de selección de texto.</li>
+</ol>
+<p>Recomendaciones de escalado:</p>
+<ul>
+<li><strong>1–50 dispositivos</strong>: configuración actual.</li>
+<li><strong>50–500</strong>: índices suficientes; agregar retención y purga.</li>
+<li><strong>500–5 000</strong>: PostgreSQL, ingestión asíncrona, workers separados.</li>
+<li><strong>&gt;5 000</strong>: TimescaleDB/InfluxDB, cola de mensajes y dashboard separado de
+  la ingestión.</li>
+</ul>
+<hr/>
+<h2 id="mantenimiento-y-respaldo">Mantenimiento y respaldo</h2>
+<h3 id="respaldo-consistente-con-wal">Respaldo consistente con WAL</h3>
+<p>Copiar el <code>.db</code> durante escrituras puede producir una copia inconsistente.
+Usar la API de backup:</p>
+<pre><code class="language-bash">sqlite3 hospital_lorawan.db ".backup '/backup/hospital-$(date +%F).db'"
+</code></pre>
+<p>O detener el servicio y copiar los tres archivos (<code>db</code>, <code>db-wal</code>, <code>db-shm</code>).</p>
+<h3 id="retencion">Retención</h3>
+<pre><code class="language-sql">DELETE FROM readings WHERE timestamp &lt; datetime('now','-30 days');
+DELETE FROM alerts WHERE resolved = 1 AND created_at &lt; datetime('now','-90 days');
+VACUUM;
+</code></pre>
+<p>Tras un <code>DELETE</code> masivo el archivo no se reduce hasta <code>VACUUM</code>, que necesita
+espacio libre igual al de la BD.</p>
+<h3 id="integridad-y-reset">Integridad y reset</h3>
+<pre><code class="language-bash">sqlite3 hospital_lorawan.db "PRAGMA integrity_check;"
+sqlite3 hospital_lorawan.db "PRAGMA foreign_key_check;"
+
+# Reset de demostración (con la app detenida)
+rm -f hospital_lorawan.db hospital_lorawan.db-wal hospital_lorawan.db-shm
+python app.py
+</code></pre>
+<h3 id="exportacion">Exportación</h3>
+<pre><code class="language-bash">sqlite3 -header -csv hospital_lorawan.db \
+ "SELECT d.name, d.device_type, d.location, r.temperature, r.humidity, r.timestamp
+  FROM readings r JOIN devices d ON d.id = r.device_id
+  WHERE r.timestamp &gt;= datetime('now','-1 day')
+  ORDER BY r.timestamp DESC;" &gt; lecturas_24h.csv
+
+curl -s "http://localhost:5000/api/readings?limit=1000" &gt; lecturas.json
+</code></pre>
+<hr/>
+<h2 id="estructura-del-repositorio">Estructura del repositorio</h2>
+<pre><code>hospital-lorawan/
+├── README.md                      # este documento
+├── LICENSE                        # MIT
+├── docs/
+│   ├── datasheet.md               # documentación de usuario
+│   ├── developer.md               # documentación técnica y API interna
+│   ├── REFERENCES.md              # fuentes y buenas prácticas
+│   └── assets/
+│       ├── architecture.svg
+│       ├── data-flow.svg
+│       └── lorawan-stack.svg
+└── versions/
+    └── hospital-lorawan-dashboard/   # código 1.0.0 (sin modificar)
+        ├── app.py, config.py, database.py, data_generator.py,
+        │   models.py, routes.py, requirements.txt
+        ├── README.md, VERSION.md, .gitignore
+        ├── templates/dashboard.html
+        ├── static/css/dashboard.css
+        ├── static/js/dashboard.js
+        └── docs/{datasheet.md,developer.md}
+</code></pre>
+<p><code>versions/hospital-lorawan-dashboard/</code> es una <strong>copia preservada</strong> del proyecto
+original: no se edita al actualizar la documentación del portfolio. Los comandos
+de instalación y ejecución se corren dentro de esa carpeta.</p>
+<hr/>
+<h2 id="pruebas-y-verificacion">Pruebas y verificación</h2>
+<p>No hay suite automatizada. Verificación manual mínima:</p>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Prueba</th>
+<th>Esperado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><code>python app.py</code></td>
+<td>Logs de BD, seed y generador sin excepciones</td>
+</tr>
+<tr>
+<td>2</td>
+<td><code>curl /health</code></td>
+<td><code>status: ok</code>, versión 1.0.0</td>
+</tr>
+<tr>
+<td>3</td>
+<td><code>curl /api/devices</code></td>
+<td><code>count: 200</code></td>
+</tr>
+<tr>
+<td>4</td>
+<td><code>curl /api/stats</code></td>
+<td><code>total_devices: 200</code>, <code>last_update</code> no nulo</td>
+</tr>
+<tr>
+<td>5</td>
+<td><code>POST /api/generate</code> con JSON</td>
+<td><code>count: 200</code></td>
+</tr>
+<tr>
+<td>6</td>
+<td><code>POST /api/generate</code> sin cabecera</td>
+<td>HTTP 415</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>GET /api/devices/99999</code></td>
+<td>HTTP 404</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Abrir <code>/</code></td>
+<td>5 tarjetas, tabla poblada, gráfico al seleccionar</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Esperar 30 s</td>
+<td>Total de lecturas +200</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Filtrar <code>freezer_80</code></td>
+<td>4 filas</td>
+</tr>
+<tr>
+<td>11</td>
+<td>Buscar "Laboratorio"</td>
+<td>Subconjunto coherente</td>
+</tr>
+<tr>
+<td>12</td>
+<td><code>PRAGMA integrity_check</code></td>
+<td><code>ok</code></td>
+</tr>
+</tbody>
+</table>
+<p>Verificación de sintaxis sin servidor:</p>
+<pre><code class="language-bash">python -m compileall -q .
+</code></pre>
+<hr/>
+<h2 id="roadmap">Roadmap</h2>
+<ol>
+<li><strong>Ciclo de vida de alertas</strong>: acuse, cierre automático tras N lecturas en
+   rango, histéresis y agrupación por dispositivo.</li>
+<li><strong>Ingestión real</strong>: bridge MQTT, columna <code>dev_eui</code>, deduplicación por
+   <code>f_cnt</code>.</li>
+<li><strong>Watchdog de silencio</strong> y batería/RSSI.</li>
+<li><strong>Retención automática</strong> y métricas de tamaño.</li>
+<li><strong>Autenticación y roles</strong> (lectura, operador, administrador).</li>
+<li><strong>Exportación</strong> CSV/PDF desde la UI.</li>
+<li><strong>Notificaciones</strong> por correo, Slack o SMS para <code>critical</code>.</li>
+<li><strong>PostgreSQL</strong> para &gt;500 dispositivos.</li>
+<li><strong>Pruebas</strong> con <code>pytest</code> y base temporal.</li>
+<li><strong>CDN local</strong> para redes aisladas.</li>
+</ol>
+<hr/>
+<h2 id="preguntas-frecuentes">Preguntas frecuentes</h2>
+<p><strong>¿Necesito sensores para probarlo?</strong>
+No. El generador crea 200 dispositivos y lecturas desde el primer arranque.</p>
+<p><strong>¿Los datos son reales?</strong>
+No, son sintéticos. Ver <a href="#datos-mock-vs-datos-reales">Datos mock vs. datos reales</a>.</p>
+<p><strong>¿Puedo cambiar la cantidad de dispositivos?</strong>
+Sí, editando <code>count</code> en <code>DEVICE_TYPES</code> y recreando la BD; el seed solo corre con
+la tabla vacía.</p>
+<p><strong>¿Funciona sin Internet?</strong>
+El backend sí; el frontend necesita Chart.js y Font Awesome desde CDN.</p>
+<p><strong>¿Puedo abrirlo desde otro equipo?</strong>
+Sí: escucha en <code>0.0.0.0:5000</code>. En red hospitalaria, solo detrás de proxy y
+autenticación.</p>
+<p><strong>¿Se pierde el histórico al reiniciar?</strong>
+No. Persiste en <code>hospital_lorawan.db</code>.</p>
+<p><strong>¿Sirve para cumplir normativa?</strong>
+No por sí solo: no hay auditoría inmutable, calibración trazable ni validación
+de software. Es una base técnica, no un registro regulatorio.</p>
+<hr/>
+<h2 id="licencia-y-atribuciones">Licencia y atribuciones</h2>
+<p>Distribuido bajo licencia <strong>MIT</strong>. Ver <a href="LICENSE"><code>LICENSE</code></a>.</p>
+<pre><code>MIT License
+Copyright (c) 2026 jmadasme
+</code></pre>
+<h3 id="atribuciones">Atribuciones</h3>
+<ul>
+<li>Código de la versión 1.0.0: <strong>Wander Cáceres H.
+  (<a href="https://github.com/wanderc137">@wanderc137</a>)</strong>, según el README original.</li>
+<li><a href="https://flask.palletsprojects.com/">Flask</a> · <a href="https://flask-cors.readthedocs.io/">Flask-CORS</a> ·
+  <a href="https://www.sqlite.org/">SQLite</a> · <a href="https://www.chartjs.org/">Chart.js</a> ·
+  <a href="https://fontawesome.com/">Font Awesome</a>.</li>
+<li><a href="https://www.thethingsnetwork.org/docs/">The Things Network</a> y
+  <a href="https://www.chirpstack.io/docs/">ChirpStack</a> — referencia LoRaWAN.</li>
+</ul>
+<h3 id="aviso">Aviso</h3>
+<p>Software entregado "tal cual", sin garantía. <strong>No es un dispositivo médico ni
+un sistema de control.</strong> No usar los datos simulados para decisiones clínicas,
+trazabilidad de hemoderivados, liberación de lotes ni mantenimiento. Para más
+detalle: <a href="https://github.com/jmadasme/hospital-lorawan/blob/main/datasheet.md"><code>docs/datasheet.md</code></a>,
+<a href="https://github.com/jmadasme/hospital-lorawan/blob/main/developer.md"><code>docs/developer.md</code></a> y
+<a href="https://github.com/jmadasme/hospital-lorawan/blob/main/REFERENCES.md"><code>docs/REFERENCES.md</code></a>.</p></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">Lo que no funcionó</div><h2>Los tropiezos, documentados</h2><p class="section-sub">Las primeras versiones existen para que estos errores no se repitan: cada una dejó una decisión de diseño verificable.</p></div><div class="fail-grid reveal"><div class="fail"><div class="v">1.0.0</div><h3>Datos simulados en lugar de sensores</h3><p>La versión reproducida no se conecta a sensores físicos: un generador gaussiano crea las lecturas y el camino LoRaWAN real queda descrito como diseño. El README indica que desactivar el mock son tres líneas, pero no se aplicó para conservar intacta la versión original de Wander Cáceres H. Se documentó el reemplazo por ingesta MQTT o HTTP.</p></div><div class="fail"><div class="v">1.0.0</div><h3>Alertas sin ciclo de vida</h3><p>Las alertas se crean pero nunca se resuelven: el campo resolved permanece en cero porque no existe endpoint de acuse. En consecuencia, 'Dispositivos OK' tiende a cero y el número de alertas crece mientras el generador sigue produciendo lecturas. El README documenta el problema y propone un PATCH para cerrarlas, sin implementarlo.</p></div><div class="fail"><div class="v">1.0.0</div><h3>Evaluación sin histéresis</h3><p>Cada lectura se evalúa contra el umbral de forma aislada, aunque el sensor declara una incertidumbre de ±0,5 °C. Una medición de 8,3 °C puede corresponder a 7,9 °C y disparar una alerta evitable. El README reconoce que falta histéresis y persistencia temporal, y deja el ajuste como trabajo pendiente en lugar de presentarlo como resuelto.</p></div><div class="fail"><div class="v">1.0.0</div><h3>Reloader duplica el generador</h3><p>Con FLASK_DEBUG activo, el reloader de Werkzeug inicia dos procesos y cada uno ejecuta su propio hilo generador, por lo que las lecturas se duplican. El README recomienda desactivar el modo debug fuera del desarrollo, pero la configuración conserva FLASK_DEBUG=True en la versión publicada para mantener la reproducibilidad.</p></div></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">Ficha de evaluación</div><h2>Cómo se mide este proyecto</h2><p class="section-sub">Seis criterios con la misma escala en todo el catálogo, para comparar sin marketing.</p></div><div class="rating-head reveal"><div class="rating-avg">4.2<small>/5</small></div><div><strong>Madurez global</strong><p>Panel demostrativo sólido en documentación y reproducible en local, condicionado por datos simulados, alertas que no se cierran y un diseño LoRaWAN que aún no se implementa.</p></div></div><div class="rating reveal"><div class="rating-row"><div class="rating-name">Madurez</div><div class="rating-bar"><i style="width:60%"></i></div><div class="rating-score">3/5</div><div class="rating-note">Demostración funcional con API, base y alertas; sin pruebas ni uso clínico.</div></div><div class="rating-row"><div class="rating-name">Reproducibilidad</div><div class="rating-bar"><i style="width:80%"></i></div><div class="rating-score">4/5</div><div class="rating-note">requirements.txt, un comando y semilla fija permiten levantar el panel sin servicios externos.</div></div><div class="rating-row"><div class="rating-name">Documentación</div><div class="rating-bar"><i style="width:100%"></i></div><div class="rating-score">5/5</div><div class="rating-note">README extenso con arquitectura, límites, consultas SQL y ruta LoRaWAN documentada.</div></div><div class="rating-row"><div class="rating-name">Honestidad de límites</div><div class="rating-bar"><i style="width:100%"></i></div><div class="rating-score">5/5</div><div class="rating-note">Declara datos simulados, ausencia de autenticación, alertas sin cierre y falta de retención.</div></div><div class="rating-row"><div class="rating-name">Valor demostrativo</div><div class="rating-bar"><i style="width:80%"></i></div><div class="rating-score">4/5</div><div class="rating-note">Muestra visualización, modelo y alertas de cadena de frío con datos creíbles.</div></div><div class="rating-row"><div class="rating-name">Facilidad de despliegue</div><div class="rating-bar"><i style="width:80%"></i></div><div class="rating-score">4/5</div><div class="rating-note">Flask y SQLite sin dependencias nativas; requiere desactivar debug y servir estáticos.</div></div></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">Preguntas típicas</div><h2>Lo que suelen preguntar</h2></div><div class="faq reveal"><details><summary>¿Qué es este proyecto?</summary><p>Es un dashboard Flask con SQLite que muestra temperatura y humedad de 200 puntos simulados de una cadena de frío hospitalaria, con alertas warning/critical, histórico y gráficos actualizados cada diez segundos.</p></details><details><summary>¿Se conecta a sensores reales?</summary><p>No. La versión 1.0.0 genera lecturas con un generador gaussiano y solo documenta como diseño el camino LoRaWAN (gateway, network server y MQTT o HTTP); no hay ingesta de hardware.</p></details><details><summary>¿Cómo se ejecuta?</summary><p>Requiere Python y las dependencias de requirements.txt; se levanta con un comando Flask, crea la base SQLite y siembra los 200 dispositivos. Para operación continua hay que desactivar FLASK_DEBUG y no usar varios workers.</p></details><details><summary>¿Qué se puede reutilizar?</summary><p>El modelo de datos, las diez rutas API, la lógica de umbrales y las vistas con Chart.js; el README advierte que la ingesta real y el ciclo de vida de alertas deben implementarse aparte.</p></details></div></div></section>
 <section class="cta"><div class="wrap"><div class="cta-box reveal">
   <div class="kicker">Siguiente paso</div><h2>¿Te animás?</h2>
   <p>Usá esto como base y referencia para hospital lorawan. Este proyecto es la prueba de que se puede hacer con componentes reales.</p>

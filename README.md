@@ -1219,6 +1219,57 @@ de software. Es una base técnica, no un registro regulatorio.
 
 ---
 
+## Ficha de evaluación
+
+**Madurez global: 4.2/5**
+
+| Criterio | Nota | Evidencia |
+|---|---:|---|
+| Madurez | 3/5 | Demostración funcional con API, base y alertas; sin pruebas ni uso clínico. |
+| Reproducibilidad | 4/5 | requirements.txt, un comando y semilla fija permiten levantar el panel sin servicios externos. |
+| Documentación | 5/5 | README extenso con arquitectura, límites, consultas SQL y ruta LoRaWAN documentada. |
+| Honestidad de límites | 5/5 | Declara datos simulados, ausencia de autenticación, alertas sin cierre y falta de retención. |
+| Valor demostrativo | 4/5 | Muestra visualización, modelo y alertas de cadena de frío con datos creíbles. |
+| Facilidad de despliegue | 4/5 | Flask y SQLite sin dependencias nativas; requiere desactivar debug y servir estáticos. |
+
+Panel demostrativo sólido en documentación y reproducible en local, condicionado por datos simulados, alertas que no se cierran y un diseño LoRaWAN que aún no se implementa.
+
+## Lo que no funcionó
+
+### 1.0.0 — Datos simulados en lugar de sensores
+
+La versión reproducida no se conecta a sensores físicos: un generador gaussiano crea las lecturas y el camino LoRaWAN real queda descrito como diseño. El README indica que desactivar el mock son tres líneas, pero no se aplicó para conservar intacta la versión original de Wander Cáceres H. Se documentó el reemplazo por ingesta MQTT o HTTP.
+
+### 1.0.0 — Alertas sin ciclo de vida
+
+Las alertas se crean pero nunca se resuelven: el campo resolved permanece en cero porque no existe endpoint de acuse. En consecuencia, 'Dispositivos OK' tiende a cero y el número de alertas crece mientras el generador sigue produciendo lecturas. El README documenta el problema y propone un PATCH para cerrarlas, sin implementarlo.
+
+### 1.0.0 — Evaluación sin histéresis
+
+Cada lectura se evalúa contra el umbral de forma aislada, aunque el sensor declara una incertidumbre de ±0,5 °C. Una medición de 8,3 °C puede corresponder a 7,9 °C y disparar una alerta evitable. El README reconoce que falta histéresis y persistencia temporal, y deja el ajuste como trabajo pendiente en lugar de presentarlo como resuelto.
+
+### 1.0.0 — Reloader duplica el generador
+
+Con FLASK_DEBUG activo, el reloader de Werkzeug inicia dos procesos y cada uno ejecuta su propio hilo generador, por lo que las lecturas se duplican. El README recomienda desactivar el modo debug fuera del desarrollo, pero la configuración conserva FLASK_DEBUG=True en la versión publicada para mantener la reproducibilidad.
+
+## Preguntas típicas
+
+**¿Qué es este proyecto?**
+
+Es un dashboard Flask con SQLite que muestra temperatura y humedad de 200 puntos simulados de una cadena de frío hospitalaria, con alertas warning/critical, histórico y gráficos actualizados cada diez segundos.
+
+**¿Se conecta a sensores reales?**
+
+No. La versión 1.0.0 genera lecturas con un generador gaussiano y solo documenta como diseño el camino LoRaWAN (gateway, network server y MQTT o HTTP); no hay ingesta de hardware.
+
+**¿Cómo se ejecuta?**
+
+Requiere Python y las dependencias de requirements.txt; se levanta con un comando Flask, crea la base SQLite y siembra los 200 dispositivos. Para operación continua hay que desactivar FLASK_DEBUG y no usar varios workers.
+
+**¿Qué se puede reutilizar?**
+
+El modelo de datos, las diez rutas API, la lógica de umbrales y las vistas con Chart.js; el README advierte que la ingesta real y el ciclo de vida de alertas deben implementarse aparte.
+
 ## Licencia y atribuciones
 
 Distribuido bajo licencia **MIT**. Ver [`LICENSE`](LICENSE).

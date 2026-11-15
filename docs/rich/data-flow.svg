@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 760" width="1240" height="760" role="img" aria-labelledby="title desc">
+  <title id="title">Ritmo de generación y consulta</title>
+  <desc id="desc">Línea de tiempo de 60 segundos: el hilo mock genera 200 lecturas cada 30 segundos, el navegador consulta la API cada 10 segundos y cada lectura se evalúa contra los límites del dispositivo.</desc>
+  <defs>
+    <marker id="df-teal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2A9D8F"/>
+    </marker>
+    <marker id="df-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#457B9D"/>
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="1240" height="760" fill="#06141b"/>
+
+  <text x="40" y="50" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="26" font-weight="bold" fill="#e8eef2">Ritmo de generación y consulta</text>
+  <text x="40" y="76" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="13" fill="#9db2bd">Ventana de 60 s · generación mock cada 30 s · polling del navegador cada 10 s</text>
+
+  <!-- Rejilla temporal -->
+  <g stroke="#17323d" stroke-width="1">
+    <line x1="200" y1="110" x2="200" y2="540"/>
+    <line x1="350" y1="110" x2="350" y2="540"/>
+    <line x1="500" y1="110" x2="500" y2="540"/>
+    <line x1="650" y1="110" x2="650" y2="540"/>
+    <line x1="800" y1="110" x2="800" y2="540"/>
+    <line x1="950" y1="110" x2="950" y2="540"/>
+    <line x1="1100" y1="110" x2="1100" y2="540"/>
+  </g>
+
+  <!-- Carril servidor -->
+  <rect x="40" y="112" width="1160" height="128" rx="12" fill="#0d2531" stroke="#244b5a"/>
+  <text x="60" y="140" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="13" font-weight="bold" fill="#2A9D8F">Hilo generador · servidor</text>
+  <text x="60" y="158" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11" fill="#5B7C99">data_generator.py · daemon</text>
+
+  <g font-family="'DejaVu Sans','Segoe UI',sans-serif">
+    <rect x="145" y="176" width="110" height="46" rx="8" fill="#113b39" stroke="#2A9D8F"/>
+    <text x="200" y="196" font-size="11" text-anchor="middle" fill="#e8eef2">ronda 0 s</text>
+    <text x="200" y="212" font-size="10" text-anchor="middle" fill="#9db2bd">200 INSERT</text>
+
+    <rect x="645" y="176" width="110" height="46" rx="8" fill="#113b39" stroke="#2A9D8F"/>
+    <text x="700" y="196" font-size="11" text-anchor="middle" fill="#e8eef2">ronda 30 s</text>
+    <text x="700" y="212" font-size="10" text-anchor="middle" fill="#9db2bd">200 INSERT</text>
+
+    <rect x="1045" y="176" width="110" height="46" rx="8" fill="#113b39" stroke="#2A9D8F"/>
+    <text x="1100" y="196" font-size="11" text-anchor="middle" fill="#e8eef2">ronda 60 s</text>
+    <text x="1100" y="212" font-size="10" text-anchor="middle" fill="#9db2bd">200 INSERT</text>
+  </g>
+
+  <!-- Base de datos -->
+  <rect x="200" y="268" width="900" height="46" rx="8" fill="#0b1f28" stroke="#457B9D"/>
+  <text x="220" y="296" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="12" fill="#e8eef2">SQLite · <tspan font-family="monospace" fill="#9db2bd">readings</tspan> + <tspan font-family="monospace" fill="#9db2bd">alerts</tspan> · WAL · un escritor por vez</text>
+
+  <g stroke="#2A9D8F" stroke-width="1.5" stroke-dasharray="4 3">
+    <line x1="200" y1="222" x2="200" y2="264" marker-end="url(#df-teal)"/>
+    <line x1="700" y1="222" x2="700" y2="264" marker-end="url(#df-teal)"/>
+    <line x1="1100" y1="222" x2="1100" y2="264" marker-end="url(#df-teal)"/>
+  </g>
+
+  <!-- Carril navegador -->
+  <rect x="40" y="348" width="1160" height="150" rx="12" fill="#0d2531" stroke="#244b5a"/>
+  <text x="60" y="376" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="13" font-weight="bold" fill="#457B9D">Navegador · polling</text>
+  <text x="60" y="394" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11" fill="#5B7C99">3 GET en paralelo</text>
+
+  <line x1="200" y1="452" x2="1120" y2="452" stroke="#457B9D" stroke-width="2"/>
+
+  <g fill="#457B9D">
+    <circle cx="200" cy="452" r="6"/>
+    <circle cx="350" cy="452" r="6"/>
+    <circle cx="500" cy="452" r="6"/>
+    <circle cx="650" cy="452" r="6"/>
+    <circle cx="800" cy="452" r="6"/>
+    <circle cx="950" cy="452" r="6"/>
+    <circle cx="1100" cy="452" r="6"/>
+  </g>
+
+  <g font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#9db2bd" text-anchor="middle">
+    <text x="200" y="432">0 s</text>
+    <text x="350" y="432">10 s</text>
+    <text x="500" y="432">20 s</text>
+    <text x="650" y="432">30 s</text>
+    <text x="800" y="432">40 s</text>
+    <text x="950" y="432">50 s</text>
+    <text x="1100" y="432">60 s</text>
+  </g>
+
+  <text x="200" y="478" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">current</text>
+  <text x="200" y="491" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">alerts</text>
+  <text x="200" y="504" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">stats</text>
+
+  <text x="350" y="478" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">current</text>
+  <text x="350" y="491" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">alerts</text>
+  <text x="350" y="504" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">stats</text>
+
+  <text x="650" y="478" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">current</text>
+  <text x="650" y="491" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">alerts</text>
+  <text x="650" y="504" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">stats</text>
+
+  <text x="1100" y="478" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">current</text>
+  <text x="1100" y="491" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">alerts</text>
+  <text x="1100" y="504" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10" fill="#5B7C99" text-anchor="middle">stats</text>
+
+  <!-- Evaluación de límites -->
+  <rect x="40" y="528" width="620" height="190" rx="12" fill="#0b1f28" stroke="#2f5a6b"/>
+  <text x="60" y="556" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="14" font-weight="bold" fill="#e8eef2">Evaluación por lectura</text>
+  <g font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11.5" fill="#9db2bd">
+    <text x="60" y="580">temperatura &lt; temp_min  →  alerta «baja»</text>
+    <text x="60" y="602">temperatura &gt; temp_max  →  alerta «alta»</text>
+    <text x="60" y="624">humedad fuera de rango  →  warning</text>
+  </g>
+  <text x="60" y="654" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11" fill="#5B7C99">Severidad: critical si |valor − límite| &gt; 2.0 °C</text>
+  <text x="60" y="674" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11" fill="#5B7C99">El límite se compara contra ambos extremos del rango.</text>
+  <text x="60" y="696" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11" fill="#5B7C99">Sin histéresis, sin persistencia y sin cierre automático.</text>
+
+  <!-- Efecto en el panel -->
+  <rect x="680" y="528" width="520" height="190" rx="12" fill="#0b1f28" stroke="#2f5a6b"/>
+  <text x="700" y="556" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="14" font-weight="bold" fill="#e8eef2">Efecto en el panel</text>
+  <g font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="11.5" fill="#9db2bd">
+    <text x="700" y="580">Cada 30 s aumentan los contadores globales.</text>
+    <text x="700" y="602">Cada 10 s se repintan tabla, tarjetas y alertas.</text>
+    <text x="700" y="624">El gráfico solo cambia al elegir dispositivo.</text>
+    <text x="700" y="646">Una alerta no resuelta deja el estado «alert»</text>
+    <text x="700" y="664">de forma permanente para ese dispositivo.</text>
+  </g>
+  <rect x="700" y="680" width="330" height="24" rx="6" fill="#113b39" stroke="#2A9D8F"/>
+  <text x="712" y="697" font-family="'DejaVu Sans','Segoe UI',sans-serif" font-size="10.5" fill="#c7d6dd">Los datos de esta línea de tiempo son simulados.</text>
+</svg>
