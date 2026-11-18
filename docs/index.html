@@ -205,6 +205,7 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
 
 </style>
 <link rel="stylesheet" href="assets/community.css?v=1">
+<link href="rec/player.css?v=1" rel="stylesheet"/>
 </head>
 <body>
 <header class="nav"><div class="wrap nav-in">
@@ -213,7 +214,8 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
     <a href="#proyecto">Proyecto</a>
     <a href="#versiones">Versiones</a>
     <a href="#stack">Stack</a>
-    <a href="#docs">Docs</a>
+    <a href="#video">Video</a>
+<a href="#docs">Docs</a>
     <a href="#comunidad">Comunidad</a>
     <a class="btn btn-ghost" style="padding:9px 15px" href="/iot/">← IoT</a>
   </nav>
@@ -237,7 +239,46 @@ h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.04em;margin:
   </div>
 </div></section>
 
-<section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">200</div><div class="stat-label">sensores</div></div><div class="stat"><div class="stat-num">Flask</div><div class="stat-label">backend</div></div><div class="stat"><div class="stat-num">SQLite</div><div class="stat-label">datos</div></div><div class="stat"><div class="stat-num">mock</div><div class="stat-label">modo demo</div></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El concepto</div><h2>Qué es y por qué existe</h2></div><div class="rich reveal"><p>Panel de monitoreo de cadena de frío hospitalaria construido con Flask y SQLite. Muestra temperatura y humedad de 200 puntos simulados, organizados en 11 tipos de dispositivo, con alertas por umbral, histórico y gráficos actualizados cada diez segundos. Está pensado para equipos de informática hospitalaria y desarrolladores que necesitan evaluar la interfaz, el modelo de datos y el flujo de alertas antes de conectar hardware real.</p><p>Su valor está en separar la aplicación de la adquisición: el README documenta el camino LoRaWAN completo —gateway, network server y MQTT o HTTP— como diseño, pero la versión 1.0.0 solo genera datos gaussianos. Es una demostración funcional y honesta de la capa de visualización, no un sistema clínico: las alertas no se resuelven, no hay autenticación ni retención de datos y la evaluación no incorpora histéresis.</p></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El proyecto en detalle</div><h2>Documentación preservada</h2><p class="section-sub">El README original, completo y en su contexto.</p></div><div class="detail rich reveal">
+<section class="stats"><div class="wrap stats-grid"><div class="stat"><div class="stat-num">200</div><div class="stat-label">sensores</div></div><div class="stat"><div class="stat-num">Flask</div><div class="stat-label">backend</div></div><div class="stat"><div class="stat-num">SQLite</div><div class="stat-label">datos</div></div><div class="stat"><div class="stat-num">mock</div><div class="stat-label">modo demo</div></div></div></section>
+<section class="section tight rec-section" id="video" style="--accent:#2E7DFF;--accent2:#14F195">
+<div class="wrap">
+<div class="rec-kicker">REC · VIDEO · 3:10</div>
+<h2 class="rec-h2">Hospital LoRaWAN Monitor</h2>
+<p class="rec-lead">Dashboard Flask con SQLite que muestra temperatura y humedad de 200 puntos de monitoreo hospitalario, con generación sintética de lecturas y alertas por límites.</p>
+<div class="rec-banner">
+<span class="rec-banner-icon">📋</span>
+<strong>Puedes copiar y pegar los comandos del video desde el video !!!</strong>
+<span>Pausá, seleccioná el texto de la terminal y copiá.</span>
+</div>
+<div class="rec-shell">
+<div class="rec-bar"><i></i><i></i><i></i><span class="rec-title">Hospital LoRaWAN Monitor · asciinema</span><span class="rec-rec"><b></b>REC</span></div>
+<div class="rec-screen-wrap">
+<div class="rec-screen" id="rec-screen"></div>
+<div class="rec-poster" id="rec-poster">
+<div class="rec-kicker">ASCIINEMA · 3:10</div>
+<h3>Hospital LoRaWAN Monitor</h3>
+<p>Dashboard Flask con SQLite que muestra temperatura y humedad de 200 puntos de monitoreo hospitalario, con generación sintética de lecturas y alertas por límites.</p>
+<div class="rec-poster-meta">hospital-lorawan · código real</div>
+<button class="rec-btn rec-primary" id="rec-start" type="button">▶ Reproducir</button>
+</div>
+</div>
+<div class="rec-controls">
+<button class="rec-btn rec-primary" id="rec-play" type="button">▶ Reproducir</button>
+<button class="rec-btn" id="rec-restart" type="button">↺ Reiniciar</button>
+<input class="rec-progress" id="rec-range" type="range" min="0" max="1000" value="0" aria-label="Progreso"/>
+<span class="rec-time" id="rec-time">0:00 / 3:10</span>
+<select class="rec-speed" id="rec-speed" aria-label="Velocidad"><option value="1">1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option><option value="2">2×</option></select>
+<button class="rec-btn" id="rec-full" type="button" title="Pantalla completa">⛶</button>
+<button class="rec-btn" id="rec-copy" type="button">⧉ Copiar comandos</button>
+<a class="rec-download" href="rec/hospital-lorawan.cast" download>descargar .cast</a>
+</div>
+</div>
+<p class="rec-note">Los fragmentos son del código real. Los datos son simulados: esta versión no se conecta a sensores ni implementa ingestión LoRaWAN, y así se declara en el README.</p>
+<div class="rec-chapters"><span class="rec-chip"><b>0:06</b> EL PROBLEMA</span><span class="rec-chip"><b>0:21</b> ARQUITECTURA</span><span class="rec-chip"><b>0:36</b> MODELO DE DATOS</span><span class="rec-chip"><b>0:50</b> CONFIGURACIÓN</span><span class="rec-chip"><b>1:06</b> SEED</span><span class="rec-chip"><b>1:20</b> SIMULACIÓN</span><span class="rec-chip"><b>1:34</b> ALERTAS</span><span class="rec-chip"><b>1:50</b> HILO</span><span class="rec-chip"><b>2:03</b> API</span><span class="rec-chip"><b>2:19</b> FRONTEND</span><span class="rec-chip"><b>2:33</b> FORZAR</span><span class="rec-chip"><b>2:46</b> ALCANCE</span></div>
+</div>
+</section>
+
+<section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El concepto</div><h2>Qué es y por qué existe</h2></div><div class="rich reveal"><p>Panel de monitoreo de cadena de frío hospitalaria construido con Flask y SQLite. Muestra temperatura y humedad de 200 puntos simulados, organizados en 11 tipos de dispositivo, con alertas por umbral, histórico y gráficos actualizados cada diez segundos. Está pensado para equipos de informática hospitalaria y desarrolladores que necesitan evaluar la interfaz, el modelo de datos y el flujo de alertas antes de conectar hardware real.</p><p>Su valor está en separar la aplicación de la adquisición: el README documenta el camino LoRaWAN completo —gateway, network server y MQTT o HTTP— como diseño, pero la versión 1.0.0 solo genera datos gaussianos. Es una demostración funcional y honesta de la capa de visualización, no un sistema clínico: las alertas no se resuelven, no hay autenticación ni retención de datos y la evaluación no incorpora histéresis.</p></div></div></section><section class="section tight"><div class="wrap"><div class="section-head reveal"><div class="kicker">El proyecto en detalle</div><h2>Documentación preservada</h2><p class="section-sub">El README original, completo y en su contexto.</p></div><div class="detail rich reveal">
 <p><strong>Dashboard de monitoreo de temperatura y humedad para cadena de frío hospitalaria, con diseño de ingestión LoRaWAN y simulación de 200 sensores.</strong></p>
 <p><img alt="Versión" src="https://img.shields.io/badge/versi%C3%B3n-1.0.0-2A9D8F"/>
 <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-457B9D"/>
@@ -1868,5 +1909,7 @@ detalle: <a href="https://github.com/jmadasme/hospital-lorawan/blob/main/datashe
 <script>window.PORTFOLIO_COMMUNITY={account:"jmadasme",repo:"hospital-lorawan",coinNamespace:"jmadasme-hospital-lorawan-coins-v1",faqs:[{"q": "¿Los datos son reales?", "a": "No. El repositorio incluye un generador de datos mock para demo y desarrollo; el ingest LoRaWAN real queda como integración pendiente."}, {"q": "¿Cuántos sensores soporta?", "a": "El diseño apunta a 200 sensores. El límite real depende de la base, el servidor y la frecuencia de ingest."}, {"q": "¿Qué sensores usa?", "a": "Temperatura y humedad. El modelo se puede extender a otros tipos de lectura."}, {"q": "¿Se puede desplegar en producción?", "a": "Es una base funcional, pero necesitás autenticación, migraciones, backups y un ingest real antes de usarlo en un hospital."}, {"q": "¿Por qué SQLite?", "a": "Para que la demo sea portable y no dependa de un servidor de base de datos. En producción conviene PostgreSQL."}]};</script>
 <script src="assets/community.js?v=2" defer></script>
 
+<script defer src="rec/hospital-lorawan.cast.js?v=1"></script>
+<script defer src="rec/player.js?v=1"></script>
 </body>
 </html>
